@@ -1,0 +1,122 @@
+*
+{
+    font-family: itim;
+}
+
+nav
+{
+    background-color: rgb(255, 196, 0);
+    padding: 25px;
+}
+nav a
+{
+    margin-left: 20px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+nav a:hover
+{
+    color: #836096;
+}
+#logoutbtn
+{
+    margin-left: 600px;
+}
+#MeowVilla
+{
+    font-size: 32px;
+    padding-right: 50px;
+}
+
+.mainobject img
+{
+    padding: 15px;
+    margin-left: 170px;
+    width: 1200px;
+    height: 600px;
+    opacity: 0.4;
+    border-radius: 35px;
+}
+.doubleobj
+{
+    display: flex;
+    margin-left: 125px;
+}
+.doubleobj img
+{
+    padding: 20px;
+    margin-left: 30px;
+    width: 600px;
+    height: 400px;
+    opacity: 0.9;
+    border-radius: 35px;
+}
+.overlay /*ใส่ข้อความหรือปุ่มทับลงไปในภาพ*/
+{
+    position: absolute;
+    display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
+    top: 20%; /* ย้ายข้อความขึ้นมากลาง */
+    left: 20%; /* ย้ายข้อความไปที่กลาง */
+    background-color: rgba(0, 0, 0, 0.1); /* สีพื้นหลังของข้อความ */
+    border-radius: 10px;
+    color: black; /* สีข้อความ */
+    padding: 20px; /* ระยะห่างขอบของข้อความ */
+    font-size: 20px;
+}
+.overlay a
+{
+    margin-left: 600px;
+    font-size: 24px;
+}
+.overlay p
+{
+    margin-bottom: 1px;
+}
+
+.minipic01
+{
+    position: absolute;
+    top: 68%;
+    left: 3% ;
+    display: flex;
+
+    padding: 1px;
+    width: 200px;
+    height: 200px;
+}
+
+.minipic01 img
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+    margin-right: -153px; /* ระยะห่างระหว่างรูปภาพ */
+    opacity: 1;
+    border: 2px dashed black;
+}
+
+.overlay-2
+{
+    position: absolute;
+    display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
+    top: 105%; /* ย้ายข้อความขึ้นมากลาง */
+    left: 13%; /* ย้ายข้อความไปที่กลาง */
+    background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
+    border-radius: 10px;
+    color: white; /* สีข้อความ */
+    padding: 15px; /* ระยะห่างขอบของข้อความ */
+    font-size:24px;
+}
+.overlay-3
+{
+    position: absolute;
+    display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
+    top: 105%; /* ย้ายข้อความขึ้นมากลาง */
+    left: 55%; /* ย้ายข้อความไปที่กลาง */
+    background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
+    border-radius: 10px;
+    color: white; /* สีข้อความ */
+    padding: 15px; /* ระยะห่างขอบของข้อความ */
+    font-size:24px;
+}
