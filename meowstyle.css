@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@200&family=Noto+Sans+Thai:wght@300&display=swap');
+
 *
 {
-    font-family: itim;
+    font-family: 'Itim', cursive;
 }
 
 nav
 {
-    background-color: rgb(255, 196, 0);
-    padding: 25px;
+    background-color: #E9B824;
+    /*padding: 25px;*/
 }
 nav a
 {
-    margin-left: 20px;
-    font-size: 18px;
+    margin-left: 30px;
+    font-size: 20px;
     color: black;
     text-decoration: none;
 }
@@ -19,19 +21,25 @@ nav a:hover
 {
     color: #836096;
 }
-#logoutbtn
+.bottom-stroke
 {
-    margin-left: 600px;
+    background-color: #219C90;
+    padding: 0.1px;
+}
+#loginbtn
+{
+    margin-left: 480px;
 }
 #MeowVilla
 {
     font-size: 32px;
-    padding-right: 50px;
+    padding-right: 0px;
 }
 
 .mainobject img
 {
     padding: 15px;
+    margin-top: 1%;
     margin-left: 170px;
     width: 1200px;
     height: 600px;
@@ -56,7 +64,7 @@ nav a:hover
 {
     position: absolute;
     display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 20%; /* ย้ายข้อความขึ้นมากลาง */
+    top: 29%; /* ย้ายข้อความขึ้นมากลาง */
     left: 20%; /* ย้ายข้อความไปที่กลาง */
     background-color: rgba(0, 0, 0, 0.1); /* สีพื้นหลังของข้อความ */
     border-radius: 10px;
@@ -77,7 +85,7 @@ nav a:hover
 .minipic01
 {
     position: absolute;
-    top: 68%;
+    top: 76%;
     left: 3% ;
     display: flex;
 
@@ -100,7 +108,7 @@ nav a:hover
 {
     position: absolute;
     display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 105%; /* ย้ายข้อความขึ้นมากลาง */
+    top: 113%; /* ย้ายข้อความขึ้นมากลาง */
     left: 13%; /* ย้ายข้อความไปที่กลาง */
     background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
     border-radius: 10px;
@@ -112,11 +120,37 @@ nav a:hover
 {
     position: absolute;
     display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 105%; /* ย้ายข้อความขึ้นมากลาง */
+    top: 113%; /* ย้ายข้อความขึ้นมากลาง */
     left: 55%; /* ย้ายข้อความไปที่กลาง */
     background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
     border-radius: 10px;
     color: white; /* สีข้อความ */
     padding: 15px; /* ระยะห่างขอบของข้อความ */
     font-size:24px;
+}
+
+
+
+/* login.html part */
+
+
+.loginmenu
+{
+    /*background-image: url(/img/catpaw_bg.png);*/
+    background-size: cover;
+}
+
+.login-bar
+{
+    border-radius: 15px;
+    border: 0.1px solid black;
+    background-color: #d7d7d7;
+    margin-top: 10%;
+    margin-left: 28%;
+    padding: 50px;
+    width: 40%;
+}
+#login-form
+{
+    font-family: 'Kanit', sans-serif;
 }
