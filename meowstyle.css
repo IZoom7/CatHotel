@@ -5,22 +5,61 @@
     font-family: 'Itim', cursive;
 }
 
-nav
+
+nav,.bottom-stroke
 {
     background-color: #E9B824;
     /*padding: 25px;*/
 }
 nav a
 {
-    margin-left: 30px;
+    margin-left: 50px;
     font-size: 20px;
     color: black;
     text-decoration: none;
 }
-nav a:hover
+
+
+
+
+nav a
 {
-    color: #836096;
-}
+    background-image: linear-gradient(
+      to right,
+      #219C90,
+      #219C90 50%,
+      #000 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  nav a:before{
+    content: '';
+    background: #219C90;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  nav a:hover {
+   background-position: 0;
+  }
+  
+  nav a:hover::before{
+    width: 100%;
+  }
+  
 .bottom-stroke
 {
     background-color: #219C90;
@@ -28,7 +67,7 @@ nav a:hover
 }
 #loginbtn
 {
-    margin-left: 480px;
+    margin-left: 400px;
 }
 #MeowVilla
 {
@@ -108,7 +147,7 @@ nav a:hover
 {
     position: absolute;
     display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 113%; /* ย้ายข้อความขึ้นมากลาง */
+    top: 115%; /* ย้ายข้อความขึ้นมากลาง */
     left: 13%; /* ย้ายข้อความไปที่กลาง */
     background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
     border-radius: 10px;
@@ -120,7 +159,7 @@ nav a:hover
 {
     position: absolute;
     display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 113%; /* ย้ายข้อความขึ้นมากลาง */
+    top: 115%; /* ย้ายข้อความขึ้นมากลาง */
     left: 55%; /* ย้ายข้อความไปที่กลาง */
     background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
     border-radius: 10px;
@@ -130,8 +169,38 @@ nav a:hover
 }
 
 
+#services img
+{
+    width: 130px;
+    height: 130px;
+    margin-left: 28%;
+    padding-bottom: 5%;
 
-/* login.html part */
+}
+.pb-3 
+{
+    padding-bottom: 1rem !important;
+    
+}
+
+.p-sm-5 {
+    padding: 3rem!important;
+    border: 3px solid #219C90 ;
+    border-radius: 30px;
+}
+
+.row 
+{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: 10px;
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+/* ----------------login.html part------------------------- */
 
 
 .loginmenu
