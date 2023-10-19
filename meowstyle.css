@@ -5,6 +5,9 @@
     font-family: 'Itim', cursive;
 }
 
+body {
+    overflow-x: hidden;
+  }
 
 nav,.bottom-stroke
 {
@@ -73,6 +76,29 @@ nav a
 {
     font-size: 32px;
     padding-right: 0px;
+}
+
+#cat_peek
+{
+    position: absolute;
+    top: 22.5%;
+    right: -1%;
+    
+    width: 468px;
+    height: 980px;
+}
+
+#dog_peek
+{
+    position: absolute;
+    top: 220%;
+    left: -18.5%;
+    transform: rotate(90deg);
+}
+
+#mainobject-pic
+{
+    margin-right: 10%;
 }
 
 .mainobject img
@@ -147,7 +173,7 @@ nav a
 {
     position: absolute;
     display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 115%; /* ย้ายข้อความขึ้นมากลาง */
+    top: 118%; /* ย้ายข้อความขึ้นมากลาง */
     left: 13%; /* ย้ายข้อความไปที่กลาง */
     background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
     border-radius: 10px;
@@ -159,7 +185,7 @@ nav a
 {
     position: absolute;
     display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 115%; /* ย้ายข้อความขึ้นมากลาง */
+    top: 118%; /* ย้ายข้อความขึ้นมากลาง */
     left: 55%; /* ย้ายข้อความไปที่กลาง */
     background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
     border-radius: 10px;
@@ -199,6 +225,31 @@ nav a
     margin-right: 10px;
     margin-left: calc(-.5 * var(--bs-gutter-x));
 }
+
+/* ลบเส้นใต้จากลิงก์ในรายการ */
+.list-unstyled a {
+    text-decoration: none;
+  }
+  
+  /* ปรับ margin รูปภาพของรายการ */
+  .list-unstyled li img {
+    margin-right: 10px; /* ปรับ margin ตามความต้องการ */
+    margin-top: 5px;
+  }
+  
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section {
+    text-decoration: none;
+    flex: 1;
+    padding: 10px; /* ปรับค่า padding ตามที่คุณต้องการ */
+}
+
+
 
 /* ----------------login.html part------------------------- */
 
