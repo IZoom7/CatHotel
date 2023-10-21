@@ -195,6 +195,7 @@ nav a
 }
 
 
+
 #services img
 {
     width: 130px;
@@ -214,6 +215,13 @@ nav a
     border: 3px solid #219C90 ;
     border-radius: 30px;
 }
+
+
+.card-footer:last-child {
+    border-radius: 0 0 var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius);
+    margin-top: 55px;
+}
+
 
 .row 
 {
