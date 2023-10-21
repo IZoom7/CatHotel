@@ -11,9 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@200&family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
     <link rel="icon" href="/img/cat_icon01.png" >
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 </head>
-<body class="loginmenu">
+<body style="background-color: #ffe082;" class="loginmenu">
     <nav>
         <a id="MeowVilla" href="index.html"><img src="/img/PetVilla_Logo.png" alt=""></a>       
         <a href="#">จองห้องพักสัตว์เลี้ยง</a>
@@ -26,6 +27,8 @@
         <br>
     </div>
    <div class="login-bar">
+    <h4>เข้าสู่ระบบ</h4><br>
+    <img style="width: 280px; height: 130px; position: absolute; bottom: 55.4%; right: 35%;" src="/img/cat_peek02.png" alt="">
         <form action="#" method="post" id="login-form">
 
             <div class="input-group mb-3">
@@ -36,11 +39,16 @@
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">รหัสผ่าน</span>
                 <input type="password" class="form-control" placeholder="กรุณากรอกรหัสผ่าน" aria-label="กรุณากรอกรหัสผ่าน" aria-describedby="basic-addon1" name="password">
-            </div>
+            </div><br><br>
 
-            <input class="btn btn-success" type="submit" value="เข้าสู่ระบบ">
-
+            <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="เข้าสู่ระบบ">
+            <a style="margin-right: 150px;" class="btn btn-secondary" href="#">สมัครสมาชิก</a>
+            <a style="text-decoration: underline; color: black;" href="#">ลืมรหัสผ่านใช้มั้ย?</a>
 
         </form>
    </div>
+
+   <script src="meowjs.js"></script>
+
+
 </body>
