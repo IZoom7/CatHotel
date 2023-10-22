@@ -16,7 +16,7 @@ nav,.bottom-stroke
 }
 nav a
 {
-    margin-left: 50px;
+    margin-left: 30px;
     font-size: 20px;
     color: black;
     text-decoration: none;
@@ -70,7 +70,7 @@ nav a
 }
 #loginbtn
 {
-    margin-left: 400px;
+    margin-left: 300px;
 }
 #MeowVilla
 {
@@ -278,7 +278,7 @@ nav a
     padding: 50px;
     width: 40%;
 }
-#login-form
+#login-form,.signup-form
 {
     font-family: 'Kanit', sans-serif;
 }
