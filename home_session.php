@@ -1,5 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    require 'dbconn.php';
+
+    $sql = "SELECT * FROM owner";
+    $result = $conn->query($sql);
+    
+    if(!$result){
+        die("Error : ". $conn->$conn_error);
+    }
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
@@ -11,6 +21,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@200&family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="icon" href="img/cat_icon01.png" >
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="meowjs.js"></script>
+    
 
 </head>
 <body>
@@ -18,14 +31,32 @@
 <!--------------------------  Navigation Bar  ---------------------------------->
 
     <nav>
-        <a id="MeowVilla" href="index.html"><img src="img/PetVilla_Logo.png" alt=""></a>       
-        <a href="login.php">จองห้องพักสัตว์เลี้ยง</a>
-        <a href="login.php">แอบส่องน้องๆ</a>
-        <a href="login.php">ติดต่อพี่เลี้ยง</a>
+        <a id="MeowVilla" href="home_session.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
+        <a href="#">จองห้องพักสัตว์เลี้ยง</a>
+        <a href="#">แอบส่องน้องๆ</a>
+        <a href="#">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
-                         
-        <a id="loginbtn" href="login.php">เข้าสู่ระบบ</a>
-        <a href="register.php">สมัครสมาชิก</a>
+
+        <div style="position: absolute; font-size: 18px; right: 20%; bottom: 86%; background-color:#0f645b; color: white; border-radius: 30px; padding-top: 10px; padding-left: 15px; padding-right: 18px; text-align: center;">
+            <p><img style="margin-right: 10px; margin-top:-1px; width: 28px; height: 28px;" src="img/user_icon01.png" alt="">
+            
+            <?php
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<p>".$row['owner_name']."</p>";  
+                        }
+                    }else {
+                        echo "0 results";
+                    }
+                    $conn->close();
+                ?>
+            
+            </p>  
+        </div>
+                       
+        
+        <a href="index.html" id="loginbtn" class="logout">ออกจากระบบ</a>
+
 
     </nav>
     <div class="bottom-stroke">
@@ -44,7 +75,7 @@
             <p>ทางเรา PetVilla พร้อมให้บริการดูแลเหล่าเจ้านาย และมีบริการอื่นๆอีกมากมาย</p>
             <p>เรามีพื้นที่ให้แมวและสุนัขได้เล่นและสำรวจ พร้อมพื้นที่พักส่วนตัวที่สะอาดและสบายเหมือนอยู่บ้าน!</p>
             <p>PetVilla พร้อมที่จะดูแลสัตวเลี้ยงของคุณ ให้คุณมีสมาธิในภารกิจสำคัญของคุณ!</p><br>
-            <a class="btn btn-warning rounded-pill px-3" href="login.php"> 🐾 จองเลย 🐾</a>
+            <a class="btn btn-warning rounded-pill px-3" href="#"> 🐾 จองเลย 🐾</a>
         </div>
         <div class = "minipic01">
             <img src="img/minipic1.jpg" alt="">
@@ -158,7 +189,7 @@
                         </ul>
                     </div>
                     <div class="card-footer border-0 p-0">
-                        <a href="login.php" class="btn btn-primary btn-block p-3" style="background-color: #219C90; border-radius: 10px; width: 100%; margin-top: 46px; font-size: 24px;">จองห้องเลย!</a>
+                        <a href="#" class="btn btn-primary btn-block p-3" style="background-color: #219C90; border-radius: 10px; width: 100%; margin-top: 46px; font-size: 24px;">จองห้องเลย!</a>
                     </div>
                 </div>
             </div>
@@ -185,7 +216,7 @@
                         </ul>
                     </div>
                     <div class="card-footer border-0 p-0">
-                        <a href="login.php" class="btn btn-secondary btn-block p-3" style="background-color: #EE9322; border-radius: 10px; width: 100%; margin-top: 46px; font-size: 24px;">จองห้องเลย!</a>
+                        <a href="#" class="btn btn-secondary btn-block p-3" style="background-color: #EE9322; border-radius: 10px; width: 100%; margin-top: 46px; font-size: 24px;">จองห้องเลย!</a>
                     </div>
                 </div>
             </div>
@@ -213,7 +244,7 @@
                         </ul>
                     </div>
                     <div class="card-footer border-0 p-0">
-                        <a href="login.php" class="btn btn-primary btn-block p-3" style="background-color: #D83F31; border-radius: 10px; width: 100%; font-size: 24px;">จองห้องเลย!</a>
+                        <a href="#" class="btn btn-primary btn-block p-3" style="background-color: #D83F31; border-radius: 10px; width: 100%; font-size: 24px;">จองห้องเลย!</a>
                     </div>
                 </div>
             </div>
@@ -248,5 +279,30 @@
 </footer>
 
 
+<script>
+
+const logoutLinks = document.querySelectorAll('.logout');
+logoutLinks.forEach((link) => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault(); // ป้องกันการนำทางไปยัง index.html โดยค่าพื้นฐานของลิงค์
+
+    Swal.fire({
+      title: 'ยืนยันการออกจากระบบ',
+      text: 'คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'ใช่',
+      cancelButtonText: 'ยกเลิก',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // ทำการออกจากระบบ
+        // ตรงนี้คุณสามารถเพิ่มโค้ดเพื่อนำผู้ใช้ออกจากระบบ เช่น การลบคุกกี้หรือทำการตัดการเชื่อมต่อ
+        window.location.href = 'index.html'; // นำทางไปยังหน้า index.html หรืออีกหน้าที่คุณต้องการ
+      }
+    });
+  });
+});
+
+</script>
 </body>
 </html>

@@ -7,15 +7,33 @@ document.addEventListener('DOMContentLoaded', function () {
         const username = loginForm.elements.username.value;
         const password = loginForm.elements.password.value;
 
-        if (!username || !password) {
-            Swal.fire({
-                icon: 'error',
-                title: 'เกิดข้อผิดพลาด',
-                text: 'กรุณากรอกชื่อผู้ใช้และรหัสผ่าน',
-            });
-        } else {
-            // ทำการ submit แบบปกติ
-            loginForm.submit();
-        }
+        // ส่งข้อมูลไปยังไฟล์ PHP ที่สร้างข้างต้น
+        fetch('check_login.php', {
+            method: 'POST',
+            body: new URLSearchParams({
+                'username': username,
+                'password': password
+            }),
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        })
+        .then(response => response.text())
+        .then(data => {
+            if (data === 'error') {
+                // ถ้าข้อมูลไม่ตรงกัน
+                Swal.fire({
+                    icon: 'error',
+                    title: 'เกิดข้อผิดพลาด',
+                    text: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง',
+                });
+            } else {
+                // ถ้าข้อมูลถูกต้อง
+                loginForm.submit(); // ทำการ submit แบบปกติ
+            }
+        });
     });
 });
+
+
+
