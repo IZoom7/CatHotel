@@ -18,7 +18,7 @@
 <!--------------------------  Navigation Bar  ---------------------------------->
 
     <nav>
-        <a id="MeowVilla" href="index.html"><img src="img/PetVilla_Logo.png" alt=""></a>       
+        <a id="MeowVilla" href="index.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
         <a href="login.php">จองห้องพักสัตว์เลี้ยง</a>
         <a href="login.php">แอบส่องน้องๆ</a>
         <a href="login.php">ติดต่อพี่เลี้ยง</a>

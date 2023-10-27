@@ -1,12 +1,18 @@
 <?php
     require 'dbconn.php';
+    session_start();
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
 
-    $sql = "SELECT * FROM owner";
+    $sql = "SELECT * FROM owner WHERE owner_username = '$username'";
     $result = $conn->query($sql);
     
     if(!$result){
         die("Error : ". $conn->$conn_error);
     }
+
+}
+  
 
 ?>
 
@@ -32,13 +38,13 @@
 
     <nav>
         <a id="MeowVilla" href="home_session.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
-        <a href="#">จองห้องพักสัตว์เลี้ยง</a>
+        <a href="insert_pets.php">จองห้องพักสัตว์เลี้ยง</a>
         <a href="#">แอบส่องน้องๆ</a>
-        <a href="#">ติดต่อพี่เลี้ยง</a>
+        <a href="employee_chat.php">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
 
-        <div style="position: absolute; font-size: 18px; right: 20%; bottom: 86%; background-color:#0f645b; color: white; border-radius: 30px; padding-top: 10px; padding-left: 15px; padding-right: 18px; text-align: center;">
-            <p><img style="margin-right: 10px; margin-top:-1px; width: 28px; height: 28px;" src="img/user_icon01.png" alt="">
+        <div style="position: absolute; font-size: 18px; right: 20%; bottom: 86%; background-color:#0f645b; color: white; border-radius: 30px; padding-top: 10px; padding-left: 15px; padding-right: 0px; text-align: center;">
+            <img style="margin-right: 210px; margin-bottom:-41px; width: 28px; height: 28px;" src="img/user_icon01.png" alt="">
             
             <?php
                     if ($result->num_rows > 0) {
@@ -51,11 +57,11 @@
                     $conn->close();
                 ?>
             
-            </p>  
+              
         </div>
                        
         
-        <a href="index.html" id="loginbtn" class="logout">ออกจากระบบ</a>
+        <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
 
 
     </nav>
@@ -297,7 +303,7 @@ logoutLinks.forEach((link) => {
       if (result.isConfirmed) {
         // ทำการออกจากระบบ
         // ตรงนี้คุณสามารถเพิ่มโค้ดเพื่อนำผู้ใช้ออกจากระบบ เช่น การลบคุกกี้หรือทำการตัดการเชื่อมต่อ
-        window.location.href = 'index.html'; // นำทางไปยังหน้า index.html หรืออีกหน้าที่คุณต้องการ
+        window.location.href = 'index.php'; // นำทางไปยังหน้า index.html หรืออีกหน้าที่คุณต้องการ
       }
     });
   });

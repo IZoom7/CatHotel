@@ -1,21 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@200&family=Noto+Sans+Thai:wght@300&display=swap');
 
-*
-{
+* {
     font-family: 'Itim', cursive;
 }
 
 body {
     overflow-x: hidden;
-  }
+}
 
-nav,.bottom-stroke
-{
+nav,
+.bottom-stroke {
     background-color: #E9B824;
     /*padding: 25px;*/
 }
-nav a
-{
+
+nav a {
     margin-left: 30px;
     font-size: 20px;
     color: black;
@@ -25,14 +24,11 @@ nav a
 
 
 
-nav a
-{
-    background-image: linear-gradient(
-      to right,
-      #219C90,
-      #219C90 50%,
-      #000 50%
-    );
+nav a {
+    background-image: linear-gradient(to right,
+            #219C90,
+            #219C90 50%,
+            #000 50%);
     background-size: 200% 100%;
     background-position: -100%;
     display: inline-block;
@@ -41,9 +37,9 @@ nav a
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.1s ease-in-out;
-  }
-  
-  nav a:before{
+}
+
+nav a:before {
     content: '';
     background: #219C90;
     display: block;
@@ -53,56 +49,51 @@ nav a
     width: 0;
     height: 3px;
     transition: all 0.1s ease-in-out;
-  }
-  
-  nav a:hover {
-   background-position: 0;
-  }
-  
-  nav a:hover::before{
+}
+
+nav a:hover {
+    background-position: 0;
+}
+
+nav a:hover::before {
     width: 100%;
-  }
-  
-.bottom-stroke
-{
+}
+
+.bottom-stroke {
     background-color: #219C90;
     padding: 0.1px;
 }
-#loginbtn
-{
+
+#loginbtn {
     margin-left: 370px;
 }
-#MeowVilla
-{
+
+#MeowVilla {
     font-size: 32px;
     padding-right: 0px;
 }
 
-#cat_peek
-{
+#cat_peek {
     position: absolute;
     top: 22.5%;
     right: -1%;
-    
+
     width: 468px;
     height: 980px;
 }
 
-#dog_peek
-{
+#dog_peek {
     position: absolute;
     top: 220%;
     left: -18.5%;
     transform: rotate(90deg);
 }
 
-#mainobject-pic
-{
+#mainobject-pic {
     margin-right: 10%;
 }
 
-.mainobject img
-{
+.mainobject img {
     padding: 15px;
     margin-top: 1%;
     margin-left: 170px;
@@ -111,13 +102,13 @@ nav a
     opacity: 0.4;
     border-radius: 35px;
 }
-.doubleobj
-{
+
+.doubleobj {
     display: flex;
     margin-left: 125px;
 }
-.doubleobj img
-{
+
+.doubleobj img {
     padding: 20px;
     margin-left: 30px;
     width: 600px;
@@ -125,33 +116,41 @@ nav a
     opacity: 0.9;
     border-radius: 35px;
 }
-.overlay /*ใส่ข้อความหรือปุ่มทับลงไปในภาพ*/
-{
+
+.overlay
+
+/*ใส่ข้อความหรือปุ่มทับลงไปในภาพ*/
+    {
     position: absolute;
-    display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 29%; /* ย้ายข้อความขึ้นมากลาง */
-    left: 20%; /* ย้ายข้อความไปที่กลาง */
-    background-color: rgba(0, 0, 0, 0.1); /* สีพื้นหลังของข้อความ */
+    display: inline-block;
+    /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
+    top: 29%;
+    /* ย้ายข้อความขึ้นมากลาง */
+    left: 20%;
+    /* ย้ายข้อความไปที่กลาง */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* สีพื้นหลังของข้อความ */
     border-radius: 10px;
-    color: black; /* สีข้อความ */
-    padding: 20px; /* ระยะห่างขอบของข้อความ */
+    color: black;
+    /* สีข้อความ */
+    padding: 20px;
+    /* ระยะห่างขอบของข้อความ */
     font-size: 20px;
 }
-.overlay a
-{
+
+.overlay a {
     margin-left: 600px;
     font-size: 24px;
 }
-.overlay p
-{
+
+.overlay p {
     margin-bottom: 1px;
 }
 
-.minipic01
-{
+.minipic01 {
     position: absolute;
     top: 76%;
-    left: 3% ;
+    left: 3%;
     display: flex;
 
     padding: 1px;
@@ -159,60 +158,70 @@ nav a
     height: 200px;
 }
 
-.minipic01 img
-{
+.minipic01 img {
     width: 200px;
     height: 200px;
     border-radius: 25px;
-    margin-right: -153px; /* ระยะห่างระหว่างรูปภาพ */
+    margin-right: -153px;
+    /* ระยะห่างระหว่างรูปภาพ */
     opacity: 1;
     border: 2px dashed black;
 }
 
-.overlay-2
-{
+.overlay-2 {
     position: absolute;
-    display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 118%; /* ย้ายข้อความขึ้นมากลาง */
-    left: 13%; /* ย้ายข้อความไปที่กลาง */
-    background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
+    display: inline-block;
+    /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
+    top: 118%;
+    /* ย้ายข้อความขึ้นมากลาง */
+    left: 13%;
+    /* ย้ายข้อความไปที่กลาง */
+    background-color: rgba(0, 0, 0, 0.45);
+    /* สีพื้นหลังของข้อความ */
     border-radius: 10px;
-    color: white; /* สีข้อความ */
-    padding: 15px; /* ระยะห่างขอบของข้อความ */
-    font-size:24px;
-}
-.overlay-3
-{
-    position: absolute;
-    display: inline-block; /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
-    top: 118%; /* ย้ายข้อความขึ้นมากลาง */
-    left: 55%; /* ย้ายข้อความไปที่กลาง */
-    background-color: rgba(0, 0, 0, 0.45); /* สีพื้นหลังของข้อความ */
-    border-radius: 10px;
-    color: white; /* สีข้อความ */
-    padding: 15px; /* ระยะห่างขอบของข้อความ */
-    font-size:24px;
+    color: white;
+    /* สีข้อความ */
+    padding: 15px;
+    /* ระยะห่างขอบของข้อความ */
+    font-size: 24px;
 }
 
+.overlay-3 {
+    position: absolute;
+    display: inline-block;
+    /* ทำให้ความสูงของคอนเทนเนอร์เท่ากับรูปภาพใหญ่ */
+    top: 118%;
+    /* ย้ายข้อความขึ้นมากลาง */
+    left: 55%;
+    /* ย้ายข้อความไปที่กลาง */
+    background-color: rgba(0, 0, 0, 0.45);
+    /* สีพื้นหลังของข้อความ */
+    border-radius: 10px;
+    color: white;
+    /* สีข้อความ */
+    padding: 15px;
+    /* ระยะห่างขอบของข้อความ */
+    font-size: 24px;
+}
 
 
-#services img
-{
+
+#services img {
     width: 130px;
     height: 130px;
     margin-left: 28%;
     padding-bottom: 5%;
 
 }
-.pb-3 
-{
+
+.pb-3 {
     padding-bottom: 1rem !important;
-    
+
 }
 
 .p-sm-5 {
-    padding: 3rem!important;
-    border: 3px solid #219C90 ;
+    padding: 3rem !important;
+    border: 3px solid #219C90;
     border-radius: 30px;
 }
 
@@ -223,8 +232,7 @@ nav a
 }
 
 
-.row 
-{
+.row {
     --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;
     display: flex;
@@ -237,14 +245,15 @@ nav a
 /* ลบเส้นใต้จากลิงก์ในรายการ */
 .list-unstyled a {
     text-decoration: none;
-  }
-  
-  /* ปรับ margin รูปภาพของรายการ */
-  .list-unstyled li img {
-    margin-right: 10px; /* ปรับ margin ตามความต้องการ */
+}
+
+/* ปรับ margin รูปภาพของรายการ */
+.list-unstyled li img {
+    margin-right: 10px;
+    /* ปรับ margin ตามความต้องการ */
     margin-top: 5px;
-  }
-  
+}
+
 
 .footer-flex {
     display: flex;
@@ -254,7 +263,8 @@ nav a
 .footer-section {
     text-decoration: none;
     flex: 1;
-    padding: 10px; /* ปรับค่า padding ตามที่คุณต้องการ */
+    padding: 10px;
+    /* ปรับค่า padding ตามที่คุณต้องการ */
 }
 
 
@@ -262,14 +272,12 @@ nav a
 /* ----------------login.html part------------------------- */
 
 
-.loginmenu
-{
+.loginmenu {
     /*background-image: url(/img/catpaw_bg.png);*/
     background-size: cover;
 }
 
-.login-bar
-{
+.login-bar {
     border-radius: 15px;
     border: 0.1px solid black;
     background-color: #d7d7d7;
@@ -278,7 +286,8 @@ nav a
     padding: 50px;
     width: 40%;
 }
-#login-form,.signup-form
-{
+
+#login-form,
+.signup-form {
     font-family: 'Kanit', sans-serif;
 }

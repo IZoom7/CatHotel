@@ -3,7 +3,7 @@
 
 <?php
 require 'dbconn.php';
-$sql_update = "INSERT INTO owner(owner_name,owner_phone,owner_username,owner_password) VALUES ('$_POST[owner_name]', '$_POST[owner_phone]', '$_POST[owner_username]', '$_POST[owner_password]')";
+$sql_update = "INSERT INTO pets(pet_name,pet_type,pet_breed,age,pet_detail,pet_image,owner_id) VALUES ('$_POST[pet_name]', '$_POST[pet_type]', '$_POST[pet_breed]', '$_POST[age]','$_POST[pet_detail]','$_POST[pet_image]','$_POST[owner_id]')";
 
 
 $result= $conn->query($sql_update);
@@ -19,7 +19,7 @@ Swal.fire({
     text: "รอซักครู่นะเหมียว..."
 });
 </script></body>';
-header("refresh: 1; url=http://localhost/CatHotel/login.php");
+header("refresh: 1; url=http://localhost/CatHotel/home_session.php");
 }
 
 ?>
