@@ -145,7 +145,12 @@ if (isset($_SESSION['username'])) {
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
                 <input type="text" placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
-                    id="exampleFormControlTextarea1"  name="pet_detail" style="height:200px;">
+                    id="exampleFormControlTextarea1"  name="pet_detail" style="width: 100%; /* กว้างเต็มหน้าจอ */
+  height: 30px; /* ความสูงเล็ก (ปรับค่าตามต้องการ) */
+  padding: 5px; /* ขอบภายใน */
+  border: 1px solid #ccc; /* เส้นขอบ */
+  border-radius: 5px; /* มุมขอบ */
+  text-align: left; /* การจัดตำแหน่งข้อความเริ่มที่ซ้าย */">
                 
                 <!-- <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
                     id="exampleFormControlTextarea1" rows="3" name="pet_detail"></textarea> -->
