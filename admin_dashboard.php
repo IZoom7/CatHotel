@@ -46,27 +46,43 @@
     </div>
 <!---------------------------Main---------------------------------->
 
+<table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">PET-ID</th>
+                    <th scope="col-4">ชื่อสัตว์เลี้ยง</th>
+                    <th scope="col-4">ประเภท</th>
+                    <th scope="col-4">สายพันธุ์</th>
+                    <th scope="col-4">อายุ</th>
+                    <th scope="col-4">รายละเอียด</th>
+                    <th scope="col-4">รูปภาพ</th>
+                    <th scope="col-4">OWNER-ID</th>
+                </tr>
+            </thead>
+            <tbody>
+
 <?php
-                    if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "<tr>
-                            <td>".$row["pet_id"]."</td>"."
-                            <td>".$row["pet_name"]."</td>"."
-                            <td>".$row["pet_type"]."</td>"."
-                            <td>".$row["pet_breed"]."</td>"."
-                            <td>".$row["age"]."</td>".
-                            "<td>".$row["pet_detail"]."</td>".
-                            "<td>".$row["pet_image"]."</td>".
-                            "<td>".$row["owner_id"]."</td>";
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>
+                            <td>" . $row["pet_id"] . "</td>" . "
+                            <td>" . $row["pet_name"] . "</td>" . "
+                            <td>" . $row["pet_type"] . "</td>" . "
+                            <td>" . $row["pet_breed"] . "</td>" . "
+                            <td>" . $row["age"] . "</td>" .
+                    "<td>" . $row["pet_detail"] . "</td>" .
+                    "<td>" . $row["pet_image"] . "</td>" .
+                    "<td>" . $row["owner_id"] . "</td>";
 
-                            echo "</tr>";  
-                        }
-                    }else {
-                        echo "0 results";
-                    }
-                    $conn->close();
-                ?>
-
+                echo "</tr>";
+            }
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
+        ?>
+    </tbody>
+</table>
 
 
 <!-------------------- Bottom(Footer) -------------------------->
