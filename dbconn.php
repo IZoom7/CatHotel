@@ -15,6 +15,6 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
  
 }
-echo "Connected successfully";
+echo "<script> console.log('database connected!') </script>";
 mysqli_close($conn);
 ?>

@@ -3,7 +3,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
-require 'dbconn.php';
+require_once 'dbconn.php';
 
 // รับข้อมูลจากแบบฟอร์ม
 $username = $_POST['username'];
