@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
 
-    $sql_update = "INSERT INTO pets(pet_name,pet_type,pet_breed,age,pet_detail,pet_image,owner_id) VALUES ('$_POST[pet_name]', '$_POST[pet_type]', '$_POST[pet_breed]', '$_POST[age]','$_POST[pet_detail]','$newname','$_POST[owner_id]')";
+    $sql_update = "INSERT INTO pets(pet_name,pet_type,pet_breed,age,pet_detail,pet_image,owner_id) VALUES ('$_POST[pet_name]', '$_POST[pet_type]', '$_POST[pet_breed]', '$_POST[age]','$_POST[pet_detail]','$_POST[pet_image]','$_POST[owner_id]')";
 
 
     $result = $conn->query($sql_update);
