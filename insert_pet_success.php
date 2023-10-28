@@ -2,46 +2,29 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <?php
-session_start();
-require "dbconn.php";
+    require 'dbconn.php';
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+        
+        $sql_put_owner = "SELECT owner_id FROM owner WHERE owner_username = '$username'";
+        $sql_update = "INSERT INTO pets(pet_name,pet_type,pet_breed,age,pet_detail,pet_image,owner_id) VALUES ('$_POST[pet_name]', '$_POST[pet_type]', '$_POST[pet_breed]', '$_POST[age]', '$_POST[pet_detail]', '$_POST[pet_image]','$sql_put_owner')";
 
 
-// Check if the pet_image URL is available
-if (isset($_POST['pet_image_url'])) {
-    $pet_image_url = $_POST['pet_image_url'];
-} else {
-    $pet_image_url = ''; // Set to an empty string if no URL is provided
-}
+        $result = $conn->query($sql_update);
 
-// Rest of your form data
-$pet_name = $_POST['pet_name'];
-$age = $_POST['age'];
-$pet_type = $_POST['pet_type'];
-$pet_breed = $_POST['pet_breed'];
-$pet_detail = $_POST['pet_detail'];
-$owner_id = $_POST['owner_id'];
+        if (!$result) {
+            die("Error God Damn it : " . $conn->error);
+        } else {
 
-// Your SQL INSERT query
-$sql_insert = "INSERT INTO pets (pet_name, age, pet_type, pet_breed, pet_detail, pet_image, owner_id) 
-              VALUES ('$pet_name', '$age', '$pet_type', '$pet_breed', '$pet_detail', '$pet_image_url', '$owner_id')";
-
-$result = $conn->query($sql_insert);
-
-if (!$result) {
-    die("Error: " . $conn->error);
-} else {
-    // Display a success message using SweetAlert
-    echo '<script>
-        Swal.fire({
-            icon: "success",
-            title: "เพิ่มชื่อสัตว์เลี้ยงสำเร็จ",
-            text: "รอซักครู่นะเหมียว..."
-        }).then(function() {
-            window.location.href = "https://petvilla.online/home_session.php";
-        });
-    </script>';
-}
-?>
-
-
+            echo '<body><script>
+Swal.fire({
+    icon: "success",
+    title: "เพื่มรายชื่อสัตว์เลี้ยงสำเร็จ",
+    text: "รอซักครู่นะเหมียว..."
+});
+</script></body>';
+            header("refresh: 1; url=http://localhost/CatHotel/home_session.php");
+        }
+    }
+    ?>
 </body>
