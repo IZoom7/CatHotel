@@ -15,7 +15,7 @@ if(!$result) {
 echo '<body><script>
 Swal.fire({
     icon: "success",
-    title: "เพิ่มชื่อสัตว์เลี้ยงสำเร็จ",
+    title: "ลงทะเบียนสำเร็จ",
     text: "รอซักครู่นะเหมียว..."
 });
 </script></body>';

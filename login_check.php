@@ -3,13 +3,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
-// เชื่อมต่อกับฐานข้อมูล
-$mysqli = new mysqli("localhost", "root", "", "petvilla");
-
-// ตรวจสอบการเชื่อมต่อ
-if ($mysqli->connect_error) {
-    die("การเชื่อมต่อล้มเหลว: " . $mysqli->connect_error);
-}
+require 'dbconn.php';
 
 // รับข้อมูลจากแบบฟอร์ม
 $username = $_POST['username'];
