@@ -31,7 +31,7 @@
 <!--------------------------  Navigation Bar  ---------------------------------->
 
     <nav>
-        <a id="MeowVilla" href="index.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
+        <a id="MeowVilla" href="admin_dashboard.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
         <a href="login.php">จองห้องพักสัตว์เลี้ยง</a>
         <a href="login.php">แอบส่องน้องๆ</a>
         <a href="login.php">ติดต่อพี่เลี้ยง</a>
@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
                     <td>".$row["pet_breed"]."</td>
                     <td>".$row["age"]."</td>
                     <td>".$row["pet_detail"]."</td>
-                    <td><img src='data:image/jpeg;base64," . base64_encode($row["pet_image"]) . "'></td>
+                    <td><img src='data:imgage/jpeg;base64," . base64_encode($row["pet_image"]) . "'></td>
                     <td>".$row["owner_id"]."</td>
               </tr>";
     }
