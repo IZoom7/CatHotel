@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
                     <td>".$row["pet_breed"]."</td>
                     <td>".$row["age"]."</td>
                     <td>".$row["pet_detail"]."</td>.
-                    <td>".$row["pet_image"]."</td>.
+                    <td>"."<img src = ".$row["pet_image"].">"."</td>.
                     <td>".$row["owner_id"]."</td>.
                     <tr>";
 
