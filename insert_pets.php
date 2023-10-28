@@ -36,7 +36,7 @@ if (isset($_SESSION['username'])) {
         rel="stylesheet">
     <link rel="icon" href="img/cat_icon01.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload" data-sibling="uppic" data-palette="orange"></script>
+    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload" data-sibling="uppic" data-palette="orange" data-sibling-pos="before"></script>
 
 </head>
 
@@ -152,7 +152,7 @@ if (isset($_SESSION['username'])) {
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
-                    <input class="uppic" style="width=20%" type="text" class="form-control" name="pet_image">
+                    <input style="width=20%" type="text" class="form-control" name="pet_image">
                     <input class="uppic" type="button" value="UploadFile">
                 </div>
             
