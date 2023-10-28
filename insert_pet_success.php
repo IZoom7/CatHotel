@@ -19,7 +19,7 @@ Swal.fire({
     text: "รอซักครู่นะเหมียว..."
 });
 </script></body>';
-header("refresh: 1; url=http://localhost/CatHotel/home_session.php");
+header("refresh: 1; url=https://petvilla.online/home_session.php");
 }
 
 ?>
