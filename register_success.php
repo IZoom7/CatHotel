@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <?php
-require_once 'dbconn.php';
+require 'dbconn.php';
 $sql_update = "INSERT INTO owner(owner_name,owner_phone,owner_username,owner_password) VALUES ('$_POST[owner_name]', '$_POST[owner_phone]', '$_POST[owner_username]', '$_POST[owner_password]')";
 
 

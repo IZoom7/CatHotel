@@ -1,5 +1,5 @@
 <?php
-    require_once 'dbconn.php';
+    require 'dbconn.php';
     session_start();
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];

@@ -3,7 +3,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
-require_once 'dbconn.php';
+require 'dbconn.php';
 
 // รับข้อมูลจากแบบฟอร์ม
 $username = $_POST['username'];
@@ -40,7 +40,7 @@ if ($result->num_rows == 1) {
             title: "เกิดข้อผิดพลาด",
             text: "ไม่พบผู้ใช้หรือข้อมูลไม่ตรงกัน"
         }).then(function() {
-            window.location = "login.php"; // ลิงก์ไปยังหน้า login_page.php หรือหน้าที่ต้องการ
+            window.location = "login.php";
         });
     </script></body>';
 }
