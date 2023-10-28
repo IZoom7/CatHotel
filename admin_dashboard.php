@@ -72,8 +72,9 @@
                     <td>" . $row["age"] . "</td>" . "
                     <td>" . $row["pet_detail"] . "</td>";
         
-                // Display the image using data URI
-                echo '<td><img src="data:image/jpeg;base64,'.base64_encode($row["pet_image"]).'" width="100" height="100" /></td>';
+                // Display the image from BLOB data using base64_encode
+                $imageData = base64_encode($row["pet_image"]);
+                echo '<td><img src="data:image/jpeg;base64,' . $imageData . '" width="100" height="100" /></td>';
                 
                 echo "<td>" . $row["owner_id"] . "</td>";
         
