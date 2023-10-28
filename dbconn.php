@@ -1,7 +1,20 @@
 <?php
-$conn = new mysqli('localhost','u109030572_adminpet','mrJZP1212.','u109030572_petvilla');
-$conn->query("SET NAMES utf8");
-if($conn->connect_error){
-    die("Connection Fail God damn it ". $conn->$conn_error);
+$servername = "localhost";
+$database = "u109030572_petvilla";
+$username = "u109030572_adminpet";
+$password = "mrJZP1212.";
+ 
+// Create connection
+ 
+$conn = mysqli_connect($servername, $username, $password, $database);
+ 
+// Check connection
+ 
+if (!$conn) {
+ 
+    die("Connection failed: " . mysqli_connect_error());
+ 
 }
+echo "Connected successfully";
+mysqli_close($conn);
 ?>
