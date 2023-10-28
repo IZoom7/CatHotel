@@ -46,7 +46,7 @@
     </div>
 <!---------------------------Main---------------------------------->
 
-<table class="table">
+<table  class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">PET-ID</th>
@@ -65,15 +65,18 @@
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
-                            <td>" . $row["pet_id"] . "</td>" . "
-                            <td>" . $row["pet_name"] . "</td>" . "
-                            <td>" . $row["pet_type"] . "</td>" . "
-                            <td>" . $row["pet_breed"] . "</td>" . "
-                            <td>" . $row["age"] . "</td>" .
-                    "<td>" . $row["pet_detail"] . "</td>" .
-                    "<td>" . $row["pet_image"] . "</td>" .
-                    "<td>" . $row["owner_id"] . "</td>";
-
+                    <td>" . $row["pet_id"] . "</td>" . "
+                    <td>" . $row["pet_name"] . "</td>" . "
+                    <td>" . $row["pet_type"] . "</td>" . "
+                    <td>" . $row["pet_breed"] . "</td>" . "
+                    <td>" . $row["age"] . "</td>" . "
+                    <td>" . $row["pet_detail"] . "</td>";
+        
+                // Display the image using data URI
+                echo '<td><img src="data:image/jpeg;base64,'.base64_encode($row["pet_image"]).'" width="100" height="100" /></td>';
+                
+                echo "<td>" . $row["owner_id"] . "</td>";
+        
                 echo "</tr>";
             }
         } else {
