@@ -150,10 +150,12 @@ if (isset($_SESSION['username'])) {
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
-                <input type="file" class="form-control" name="pet_image" accept="image/*" required>
+                <input type="text" class="form-control" name="pet_image" >
                 <div class="chevereto-pup-container">
                     <button data-chevereto-pup-trigger="" class="chevereto-pup-button" data-chevereto-pup-id="42deb0c7-0ed1-485d-9161-bfd6f2b28200"><span class="chevereto-pup-button-icon">
-                        <svg class="chevereto-pup-button-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M76.7 87.5c12.8 0 23.3-13.3 23.3-29.4 0-13.6-5.2-25.7-15.4-27.5 0 0-3.5-0.7-5.6 1.7 0 0 0.6 9.4-2.9 12.6 0 0 8.7-32.4-23.7-32.4 -29.3 0-22.5 34.5-22.5 34.5 -5-6.4-0.6-19.6-0.6-19.6 -2.5-2.6-6.1-2.5-6.1-2.5C10.9 25 0 39.1 0 54.6c0 15.5 9.3 32.7 29.3 32.7 2 0 6.4 0 11.7 0V68.5h-13l22-22 22 22H59v18.8C68.6 87.4 76.7 87.5 76.7 87.5z" style="fill: currentcolor;"></path></svg></span><span class="chevereto-pup-button-text">Upload images</span></button></div>
+                        <svg class="chevereto-pup-button-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+                            <path d="M76.7 87.5c12.8 0 23.3-13.3 23.3-29.4 0-13.6-5.2-25.7-15.4-27.5 0 0-3.5-0.7-5.6 1.7 0 0 0.6 9.4-2.9 12.6 0 0 8.7-32.4-23.7-32.4 -29.3 0-22.5 34.5-22.5 34.5 -5-6.4-0.6-19.6-0.6-19.6 -2.5-2.6-6.1-2.5-6.1-2.5C10.9 25 0 39.1 0 54.6c0 15.5 9.3 32.7 29.3 32.7 2 0 6.4 0 11.7 0V68.5h-13l22-22 22 22H59v18.8C68.6 87.4 76.7 87.5 76.7 87.5z" style="fill: currentcolor;"></path></svg></span>
+                        <span class="chevereto-pup-button-text">Upload images</span></button></div>
             </div>
             </div>
             <div class="input-group mb-3" ">
