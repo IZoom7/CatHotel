@@ -36,8 +36,7 @@ if (isset($_SESSION['username'])) {
         rel="stylesheet">
     <link rel="icon" href="img/cat_icon01.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload"
-        data-auto-insert="html-embed"></script>
+    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload" data-sibling="input-group-text-za"></script>
 
 </head>
 
@@ -152,7 +151,7 @@ if (isset($_SESSION['username'])) {
             </div>
 
                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
+                    <span class="input-group-text-za" id="basic-addon1">เพิ่มรูปภาพ</span>
                     <input style="width=20%" type="text" class="form-control" name="pet_image"
                         data-chevereto-pup="sibling" data-chevereto-pup-target="42deb0c7-0ed1-485d-9161-bfd6f2b28200"
                         spellcheck="true">
