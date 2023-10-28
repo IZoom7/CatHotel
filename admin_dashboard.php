@@ -37,8 +37,7 @@
         <a href="login.php">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
                          
-        <a id="loginbtn" href="login.php">เข้าสู่ระบบ</a>
-        <a href="register.php">สมัครสมาชิก</a>
+        <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
 
     </nav>
     <div class="bottom-stroke">
