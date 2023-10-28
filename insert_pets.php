@@ -166,7 +166,7 @@ if (isset($_SESSION['username'])) {
 
             <br><br>
             <div style="font-family: 'Kanit', sans-serif;">
-                <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="เพิ่มสัตว์เลี้ยง">
+                <input style="margin-right: 15px;" class="btn btn-success" name="submit" type="submit" value="เพิ่มสัตว์เลี้ยง">
                 <a style="margin-right: 150px;" class="btn btn-secondary" href="home_session.php">กลับไปยังหน้าหลัก</a>
             </div>
         </form>
