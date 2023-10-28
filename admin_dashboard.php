@@ -45,45 +45,46 @@
     </div>
 <!---------------------------Main---------------------------------->
 
-<table  class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">PET-ID</th>
-                    <th scope="col-4">ชื่อสัตว์เลี้ยง</th>
-                    <th scope="col-4">ประเภท</th>
-                    <th scope="col-4">สายพันธุ์</th>
-                    <th scope="col-4">อายุ</th>
-                    <th scope="col-4">รายละเอียด</th>
-                    <th scope="col-4">รูปภาพ</th>
-                    <th scope="col-4">OWNER-ID</th>
-                </tr>
-            </thead>
-            <tbody>
-
 <?php
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>
-                    <td>".$row["pet_id"]."</td>
-                    <td>".$row["pet_name"]."</td>
-                    <td>".$row["pet_type"]."</td>
-                    <td>".$row["pet_breed"]."</td>
-                    <td>".$row["age"]."</td>
-                    <td>".$row["pet_detail"]."</td>";
-                    echo "<td>"."< img src ="."".$row["pet_image"]."".">"."</td>";
-                    echo "<td>".$row["owner_id"]."</td>";
-                    echo "</tr>";
-                }
+$result = $conn->query("SELECT * FROM pets");
+$imgData = $result->fetchAll(PDO::FETCH_ASSOC);
 
+if ($imgData) {
+    echo '<table class="table table-striped">';
+    echo '<thead>';
+    echo '<tr>';
+    echo '<th scope="col">รูปภาพ</th>';
+    echo '<th scope="col">ชื่อสัตว์เลี้ยง</th>';
+    echo '<th scope="col">ประเภท</th>';
+    echo '<th scope="col">สายพันธุ์</th>';
+    echo '<th scope="col">อายุ</th>';
+    echo '<th scope="col">รายละเอียด</th>';
+    echo '<th scope="col">OWNER-ID</th>';
+    echo '</tr>';
+    echo '</thead>';
+    echo '<tbody>';
+    
+    foreach ($imgData as $img) {
+        echo '<tr>';
+        echo '<td>';
+        echo '<img class="img-thumbnail" src="data:image/jpeg;base64,' . base64_encode($img['image']) . '" alt="Uploaded image" style="width: 100%;" />';
+        echo '</td>';
+        echo '<td>' . $img['pet_name'] . '</td>';
+        echo '<td>' . $img['pet_type'] . '</td>';
+        echo '<td>' . $img['pet_breed'] . '</td>';
+        echo '<td>' . $img['age'] . '</td>';
+        echo '<td>' . $img['pet_detail'] . '</td>';
+        echo '<td>' . $img['owner_id'] . '</td>';
+        echo '</tr>';
     }
- else {
-    echo "0 results";
+    
+    echo '</tbody>';
+    echo '</table>';
+} else {
+    echo 'ยังไม่มีรูปภาพที่ถูกอัปโหลด';
 }
+?>
 
-$conn->close();
-        ?>
-    </tbody>
-</table>
 
 
 <!-------------------- Bottom(Footer) -------------------------->
