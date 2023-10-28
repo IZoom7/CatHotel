@@ -5,12 +5,6 @@
 session_start();
 require "dbconn.php";
 
-<?php
-
-
-    session_start();
-    require "dbconn.php";
-
 
     $fileupload = $_POST['pet_image']; // รับค่าไฟล์จากฟอร์ม
     $fileupload = (isset($_POST['pet_image']) ? $_POST['pet_image'] : '');
