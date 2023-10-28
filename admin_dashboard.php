@@ -69,10 +69,10 @@ if ($result->num_rows > 0) {
                     <td>".$row["pet_type"]."</td>
                     <td>".$row["pet_breed"]."</td>
                     <td>".$row["age"]."</td>
-                    <td>".$row["pet_detail"]."</td>.
-                    <td>"."<img src = ".$row["pet_image"].">"."</td>.
-                    <td>".$row["owner_id"]."</td>.
-                    <tr>";
+                    <td>".$row["pet_detail"]."</td>";
+                    echo '<td><img src="data:' . $row['pet_image'] . ';base64,' . base64_encode($row['pet_image']) . '" /></td>';
+                    echo "</tr>";
+                }
 
     }
 } else {
