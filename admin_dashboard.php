@@ -65,20 +65,20 @@
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
-                    <td>".$row["pet_id"]."</td>"."
-                    <td>".$row["pet_name"]."</td>"."
-                    <td>".$row["pet_type"]."</td>"."
-                    <td>".$row["pet_breed"]."</td>"."
-                    <td>".$row["age"]."</td>"."
-                    <td>".$row["pet_detail"]."</td>".
-                    "<td><img src='" . $row["pet_image"] . "'></td>".
-                    "<td>".$row["owner_id"]."</td>";
-
-        echo "</tr>";
+                    <td>".$row["pet_id"]."</td>
+                    <td>".$row["pet_name"]."</td>
+                    <td>".$row["pet_type"]."</td>
+                    <td>".$row["pet_breed"]."</td>
+                    <td>".$row["age"]."</td>
+                    <td>".$row["pet_detail"]."</td>
+                    <td><img src='data:image/jpeg;base64," . base64_encode($row["pet_image"]) . "'></td>
+                    <td>".$row["owner_id"]."</td>
+              </tr>";
     }
 } else {
     echo "0 results";
 }
+
 $conn->close();
         ?>
     </tbody>
