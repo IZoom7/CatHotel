@@ -62,28 +62,24 @@
             <tbody>
 
 <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>
-                    <td>" . $row["pet_id"] . "</td>" . "
-                    <td>" . $row["pet_name"] . "</td>" . "
-                    <td>" . $row["pet_type"] . "</td>" . "
-                    <td>" . $row["pet_breed"] . "</td>" . "
-                    <td>" . $row["age"] . "</td>" . "
-                    <td>" . $row["pet_detail"] . "</td>";
-        
-                // Display the image from BLOB data using base64_encode
-                $imageData = base64_encode($row["pet_image"]);
-                echo '<td><img src="data:image/jpeg;base64,' . $imageData . '" width="100" height="100" /></td>';
-                
-                echo "<td>" . $row["owner_id"] . "</td>";
-        
-                echo "</tr>";
-            }
-        } else {
-            echo "0 results";
-        }
-        $conn->close();
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr>
+                    <td>".$row["pet_id"]."</td>"."
+                    <td>".$row["pet_name"]."</td>"."
+                    <td>".$row["pet_type"]."</td>"."
+                    <td>".$row["pet_breed"]."</td>"."
+                    <td>".$row["age"]."</td>"."
+                    <td>".$row["pet_detail"]."</td>".
+                    "<td>".$row["pet_image"]."</td>".
+                    "<td>".$row["owner_id"]."</td>";
+
+        echo "</tr>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
         ?>
     </tbody>
 </table>
