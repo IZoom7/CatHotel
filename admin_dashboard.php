@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
                     <td>".$row["pet_breed"]."</td>
                     <td>".$row["age"]."</td>
                     <td>".$row["pet_detail"]."</td>";
-                    echo '<img src="data:image/png;base64,'.base64_encode($row['pet_image']).'"/>';
+                    echo "<td>".$row["pet_image"]."</td>";
                     echo "<td>".$row["owner_id"]."</td>";
                     echo "</tr>";
                 }
