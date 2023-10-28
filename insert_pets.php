@@ -145,7 +145,7 @@ if (isset($_SESSION['username'])) {
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
                 <input type="text" placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
-                    id="exampleFormControlTextarea1" rows="3" name="pet_detail">
+                    id="exampleFormControlTextarea1"  name="pet_detail" style="height:500px;">
                 
                 <!-- <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
                     id="exampleFormControlTextarea1" rows="3" name="pet_detail"></textarea> -->
@@ -155,7 +155,7 @@ if (isset($_SESSION['username'])) {
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
-                    <textarea name="pet_image" class="form-control" id="uppic" cols="3" rows="1"></textarea>
+                    <textarea name="pet_image" class="form-control" id="uppic" cols="2" rows="1"></textarea>
                 </div>
             
             <div class="input-group mb-3" ">
