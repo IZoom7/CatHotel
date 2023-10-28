@@ -153,7 +153,7 @@ if (isset($_SESSION['username'])) {
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
                     <input class="uppic" style="width=20%" type="text" class="form-control" name="pet_image">
-                    
+                    <input class="uppic" type="button" value="UploadFile">
                 </div>
             
             <div class="input-group mb-3" ">
