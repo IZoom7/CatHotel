@@ -143,14 +143,14 @@ if (isset($_SESSION['username'])) {
             
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
-                <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control" id="exampleFormControlTextarea1" rows="3" name="pet_detail" data-chevereto-pup="sibling" data-chevereto-pup-target="42deb0c7-0ed1-485d-9161-bfd6f2b28200" spellcheck="true"></textarea>
+                <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control" id="exampleFormControlTextarea1" rows="3" name="pet_detail" ></textarea>
                 
             
 
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
-                <input type="text" class="form-control" name="pet_image" >
+                <input type="text" class="form-control" name="pet_image" data-chevereto-pup="sibling" data-chevereto-pup-target="42deb0c7-0ed1-485d-9161-bfd6f2b28200" spellcheck="true">
                 <div class="chevereto-pup-container">
                     <button data-chevereto-pup-trigger="" class="chevereto-pup-button" data-chevereto-pup-id="42deb0c7-0ed1-485d-9161-bfd6f2b28200"><span class="chevereto-pup-button-icon">
                         <svg class="chevereto-pup-button-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
