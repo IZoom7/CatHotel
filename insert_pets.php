@@ -1,18 +1,18 @@
 <?php
-    require 'dbconn.php';
-    session_start();
+require 'dbconn.php';
+session_start();
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
     $sql = "SELECT owner_id FROM owner WHERE owner_username = '$username'";
     $result = $conn->query($sql);
-    
-    if(!$result){
-        die("Error : ". $conn->$conn_error);
+
+    if (!$result) {
+        die("Error : " . $conn->$conn_error);
     }
 
 }
-  
+
 
 ?>
 
@@ -36,7 +36,8 @@ if (isset($_SESSION['username'])) {
         rel="stylesheet">
     <link rel="icon" href="img/cat_icon01.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload" data-auto-insert="html-embed"></script>
+    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload"
+        data-auto-insert="html-embed"></script>
 
 </head>
 
@@ -78,7 +79,8 @@ if (isset($_SESSION['username'])) {
 
             <div class="d-flex" style="width: 100%;">
                 <div class="input-group mb-3">
-                    <select style="margin-right: 20px;" class="form-select" aria-label="Choose Your Pet's Type" name="pet_type">
+                    <select style="margin-right: 20px;" class="form-select" aria-label="Choose Your Pet's Type"
+                        name="pet_type">
                         <option selected>ประเภทสัตว์เลี้ยง</option>
                         <option value="สุนัข">สุนัข</option>
                         <option value="แมว">แมว</option>
@@ -134,50 +136,59 @@ if (isset($_SESSION['username'])) {
                         <option value="เมนคูน">เมนคูน</option>
                         <option value="แร็กดอล">แร็กดอล</option>
                         <option value="เบงกอล">เบงกอล</option>
-                        
+
                     </select>
                 </div>
             </div>
             <br>
-            
-            
+
+
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
-                <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control" id="exampleFormControlTextarea1" rows="3" name="pet_detail" ></textarea>
-                
-            
+                <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
+                    id="exampleFormControlTextarea1" rows="3" name="pet_detail"></textarea>
 
 
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
-                <input type="text" class="form-control" name="pet_image" data-chevereto-pup="sibling" data-chevereto-pup-target="42deb0c7-0ed1-485d-9161-bfd6f2b28200" spellcheck="true">
-                <div class="chevereto-pup-container">
-                    <button data-chevereto-pup-trigger="" class="chevereto-pup-button" data-chevereto-pup-id="42deb0c7-0ed1-485d-9161-bfd6f2b28200"><span class="chevereto-pup-button-icon">
-                        <svg class="chevereto-pup-button-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-                            <path d="M76.7 87.5c12.8 0 23.3-13.3 23.3-29.4 0-13.6-5.2-25.7-15.4-27.5 0 0-3.5-0.7-5.6 1.7 0 0 0.6 9.4-2.9 12.6 0 0 8.7-32.4-23.7-32.4 -29.3 0-22.5 34.5-22.5 34.5 -5-6.4-0.6-19.6-0.6-19.6 -2.5-2.6-6.1-2.5-6.1-2.5C10.9 25 0 39.1 0 54.6c0 15.5 9.3 32.7 29.3 32.7 2 0 6.4 0 11.7 0V68.5h-13l22-22 22 22H59v18.8C68.6 87.4 76.7 87.5 76.7 87.5z" style="fill: currentcolor;"></path></svg></span>
-                        <span class="chevereto-pup-button-text">Upload images</span></button></div>
             </div>
-            </div>
-            <div class="input-group mb-3" ">
-                    <input style="width: 60%;" type="hidden" class="form-control"                    
-                        value="<?php
-                        if ($result->num_rows > 0) {
-                            while ($row = $result->fetch_assoc()) {
-                                echo $row['owner_id'];
-                            }
-                        } else {
-                            echo "0 results";
-                        }
-                        $conn->close();
-                        ?>
-                        "
-                         aria-describedby="basic-addon1" name="owner_id">
-                        
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
+                    <input style="width=20%" type="text" class="form-control" name="pet_image"
+                        data-chevereto-pup="sibling" data-chevereto-pup-target="42deb0c7-0ed1-485d-9161-bfd6f2b28200"
+                        spellcheck="true">
+                    <div class="chevereto-pup-container">
+                        <button data-chevereto-pup-trigger="" class="chevereto-pup-button"
+                            data-chevereto-pup-id="42deb0c7-0ed1-485d-9161-bfd6f2b28200"><span
+                                class="chevereto-pup-button-icon">
+                                <svg class="chevereto-pup-button-icon" xmlns="http://www.w3.org/2000/svg" width="100"
+                                    height="100" viewBox="0 0 100 100">
+                                    <path
+                                        d="M76.7 87.5c12.8 0 23.3-13.3 23.3-29.4 0-13.6-5.2-25.7-15.4-27.5 0 0-3.5-0.7-5.6 1.7 0 0 0.6 9.4-2.9 12.6 0 0 8.7-32.4-23.7-32.4 -29.3 0-22.5 34.5-22.5 34.5 -5-6.4-0.6-19.6-0.6-19.6 -2.5-2.6-6.1-2.5-6.1-2.5C10.9 25 0 39.1 0 54.6c0 15.5 9.3 32.7 29.3 32.7 2 0 6.4 0 11.7 0V68.5h-13l22-22 22 22H59v18.8C68.6 87.4 76.7 87.5 76.7 87.5z"
+                                        style="fill: currentcolor;"></path>
+                                </svg></span>
+                            <span class="chevereto-pup-button-text">Upload images</span></button>
+                    </div>
                 </div>
+            
+            <div class="input-group mb-3" ">
+                    <input style=" width: 60%;" type="hidden" class="form-control" value="<?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo $row['owner_id'];
+                        }
+                    } else {
+                        echo "0 results";
+                    }
+                    $conn->close();
+                    ?>
+                        " aria-describedby="basic-addon1" name="owner_id">
+
+            </div>
 
             <br><br>
             <div style="font-family: 'Kanit', sans-serif;">
-                <input style="margin-right: 15px;" class="btn btn-success" name="submit" type="submit" value="เพิ่มสัตว์เลี้ยง">
+                <input style="margin-right: 15px;" class="btn btn-success" name="submit" type="submit"
+                    value="เพิ่มสัตว์เลี้ยง">
                 <a style="margin-right: 150px;" class="btn btn-secondary" href="home_session.php">กลับไปยังหน้าหลัก</a>
             </div>
         </form>
