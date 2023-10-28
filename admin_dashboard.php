@@ -32,7 +32,7 @@
 
     <nav>
         <a id="MeowVilla" href="admin_dashboard.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
-        <a href="login.php">จองห้องพักสัตว์เลี้ยง</a>
+        <a href="#">จองห้องพักสัตว์เลี้ยง</a>
         <a href="login.php">แอบส่องน้องๆ</a>
         <a href="login.php">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
@@ -69,10 +69,11 @@ if ($result->num_rows > 0) {
                     <td>".$row["pet_type"]."</td>
                     <td>".$row["pet_breed"]."</td>
                     <td>".$row["age"]."</td>
-                    <td>".$row["pet_detail"]."</td>
-                    <td><img src='data:imgage/*;base64," . base64_encode($row["pet_image"]) . "'></td>
-                    <td>".$row["owner_id"]."</td>
-              </tr>";
+                    <td>".$row["pet_detail"]."</td>.
+                    <td>".$row["pet_image"]."</td>.
+                    <td>".$row["owner_id"]."</td>.
+                    <tr>";
+
     }
 } else {
     echo "0 results";
