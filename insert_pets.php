@@ -36,7 +36,7 @@ if (isset($_SESSION['username'])) {
         rel="stylesheet">
     <link rel="icon" href="img/cat_icon01.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload" data-palette="orange" data-sibling=".uppic"></script>
+    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload" data-palette="orange" data-sibling="#uppic"></script>
 
 </head>
 
@@ -144,15 +144,18 @@ if (isset($_SESSION['username'])) {
 
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
-                <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
-                    id="exampleFormControlTextarea1" rows="3" name="pet_detail"></textarea>
+                <input type="text" placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
+                    id="exampleFormControlTextarea1" rows="3" name="pet_detail">
+                
+                <!-- <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
+                    id="exampleFormControlTextarea1" rows="3" name="pet_detail"></textarea> -->
 
 
             </div>
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
-                    <textarea name="pet_image" class="uppic" cols="3" rows="1"></textarea>
+                    <textarea name="pet_image" class="form-control" id="uppic" cols="3" rows="1"></textarea>
                 </div>
             
             <div class="input-group mb-3" ">
