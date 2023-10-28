@@ -31,7 +31,7 @@ require "dbconn.php";
         //ตั้งชื่อไฟล์ใหม่โดยเอาเวลาไว้หน้าชื่อไฟล์เดิม
         $newname = $date . $numrand . $type;
         $path_copy = $path . $newname;
-        $path_link = "fileupload/" . $newname;
+        $path_link = "uploaded/" . $newname;
 
         //คัดลอกไฟล์ไปเก็บที่เว็บเซิร์ฟเวอร์
         move_uploaded_file($_FILES['pet_image']['tmp_name'], $path_copy);
