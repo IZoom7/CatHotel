@@ -146,7 +146,6 @@ if (isset($_SESSION['username'])) {
                 <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
                 <input type="text" placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
                     id="exampleFormControlTextarea1"  name="pet_detail">
- >
                 
                 <!-- <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
                     id="exampleFormControlTextarea1" rows="3" name="pet_detail"></textarea> -->
