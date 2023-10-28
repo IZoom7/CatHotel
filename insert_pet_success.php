@@ -1,6 +1,5 @@
 <body style="font-family: 'Itim', cursive;">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload"></script>
 
     <?php
 session_start();
