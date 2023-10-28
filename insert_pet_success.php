@@ -5,6 +5,7 @@
 session_start();
 require "dbconn.php";
 
+
 // Check if the pet_image URL is available
 if (isset($_POST['pet_image_url'])) {
     $pet_image_url = $_POST['pet_image_url'];
