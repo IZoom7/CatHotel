@@ -2,7 +2,7 @@
     require 'dbconn.php';
   
     $sql = "SELECT pets.*, owner.owner_name AS owner_name FROM pets
-            LEFT JOIN owner ON pets.owner_id = owner.owner_id;";
+            LEFT JOIN owner ON pets.owner_id = owner.owner_id ORDER BY owner.owner_id ";
     
     $result = $conn->query($sql);
     
