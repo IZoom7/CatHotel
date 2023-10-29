@@ -102,10 +102,10 @@ if (isset($_SESSION['username'])) {
     
    <!--------------------------------รายชื่อสัตว์+เพิ่ม-----------------------------------> 
   
-  <h3 style="margin: left 200px;">รายชื่อสัตว์เลี้ยงที่คุณมี</h3>
+  <h3 style="margin-left: 200px;">รายชื่อสัตว์เลี้ยงที่คุณมี</h3>
 
 
-  <div style="margin: left 200px;" class="pet-group">
+  <div style="margin-left: 200px;" class="pet-group">
     <?php
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
