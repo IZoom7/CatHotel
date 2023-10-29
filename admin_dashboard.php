@@ -35,7 +35,10 @@
         width: 200px;
         height: 200px;
     }
-
+    #tableadmin
+    {
+        font-family: 'Kanit', sans-serif;
+    }
 
 </style>
 
@@ -59,7 +62,7 @@
     </div>
 <!---------------------------Main---------------------------------->
 
-<table style="font-family: 'Kanit', sans-serif;" class="table table-striped">
+<table id="tableadmin" class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">PET-ID</th>
