@@ -4,7 +4,7 @@
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
-    $sql = "SELECT * FROM pets INNER JOIN owner ON pets.owner_id = owner.owner_id";
+    $sql = "SELECT * FROM pets INNER JOIN owner ON pets.owner_id = owner.owner_id WHERE owner_username = '$username'";
 
     
     $result = $conn->query($sql);
