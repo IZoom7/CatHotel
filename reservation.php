@@ -47,7 +47,7 @@ if (isset($_SESSION['username'])) {
         {
             border: 1px grey solid;
             border-radius: 10px;
-            margin-left: 30px;
+            margin-left: 12px;
             padding: 10px;
             background-color: #efefef;
         }
@@ -106,7 +106,7 @@ if (isset($_SESSION['username'])) {
   <h3 style="margin-left: 200px;">รายชื่อสัตว์เลี้ยงที่คุณมี</h3>
 
 
-  <div style="margin-left: 200px;" class="pet-group">
+  <div style="margin-left: 150px;" class="pet-group">
     <?php
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -124,7 +124,7 @@ if (isset($_SESSION['username'])) {
     // เพิ่ม "เพิ่มรายชื่อสัตว์เลี้ยง" นอกจากลูป
     ?>
     <a style="text-decoration: none;" href="insert_pets.php">
-        <div style="text-decoration: none; color: #707070; width: 250px; height: 295px; display: flex; flex-direction: column; align-items: center; justify-content: center;" class="pet-card">
+        <div style="padding: top 12px; text-decoration: none; color: #707070; width: 270px; height: 295px; display: flex; flex-direction: column; align-items: center; justify-content: center;" class="pet-card">
             <img style="width: 50px; height: 50px;" src="img/plus.png" alt="">
             <h6 style="text-decoration: none; margin-top: 10px;">เพิ่มรายชื่อสัตว์เลี้ยง</h6>
         </div>
