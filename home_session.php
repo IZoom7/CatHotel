@@ -43,7 +43,7 @@ if (isset($_SESSION['username'])) {
         <a href="employee_chat.php">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
 
-        <div style="position: absolute; font-size: 18px; right: 20%; bottom: 86%; background-color:#0f645b; color: white; border-radius: 5px; padding-top: 25px; padding-left: 15px; padding-right: 0px; text-align: center;">
+        <div style="position: absolute; font-size: 18px; right: 20%; bottom: 86%; background-color:#0f645b; color: white; border-radius: 5px; padding-top: 27px; padding-left: 15px; padding-right: 0px; text-align: center;">
             <img style="margin-right: 210px; margin-bottom:-41px; width: 28px; height: 28px;" src="img/user_icon01.png" alt="">
             
             <?php
