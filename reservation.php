@@ -4,12 +4,18 @@
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
-    $sql = "SELECT *FROM pets INNER JOIN owner ON pets.owner_id = owner.owner_id WHERE owner_username = '$username'";
+    $sql = "SELECT * FROM pets WHERE owner_id = (SELECT owner_id from owner where owner_username = '$username')";
+    $sql2 = "SELECT owner_name FROM owner WHERE owner_username = '$username'";
 
     
     $result = $conn->query($sql);
     
     if(!$result){
+        die("Error : ". $conn->$conn_error);
+    }
+    $result2 = $conn->query($sql2);
+    
+    if(!$result2){
         die("Error : ". $conn->$conn_error);
     }
 
@@ -103,8 +109,8 @@ if (isset($_SESSION['username'])) {
             <img style="margin-right: 210px; margin-bottom:-41px; width: 28px; height: 28px;" src="img/user_icon01.png" alt="">
             
             <?php
-                   if ($result->num_rows > 0) {
-                        $row = $result->fetch_assoc(); // อ่านแค่รายการแรก
+                   if ($result2->num_rows > 0) {
+                        $row = $result2->fetch_assoc(); // อ่านแค่รายการแรก
                         echo "<p>" . $row['owner_name'] . "</p>"; // แสดงข้อมูล
                     } else {
                         echo "0 results";
