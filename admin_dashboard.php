@@ -33,6 +33,11 @@
         width: 200px;
         height: 200px;
     }
+    table
+    {
+        font-family: 'Kanit', sans-serif;
+    }
+
 </style>
 
 </head>
@@ -65,7 +70,7 @@
                     <th scope="col-4">อายุ</th>
                     <th scope="col-4">รายละเอียด</th>
                     <th scope="col-4">รูปภาพ</th>
-                    <th scope="col-4">OWNER-ID</th>
+                    <th scope="col-4">ชื่อเจ้าของ</th>
                 </tr>
             </thead>
             <tbody>
