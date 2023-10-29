@@ -85,7 +85,7 @@ if ($result->num_rows > 0) {
                     <td>".$row["pet_detail"]."</td>";
                     echo "<td>".$row["pet_image"]."</td>";
                     echo "<td>".$row["owner_name"]."</td>";
-                    echo "<td>"."<a class='btn btn-warning' href="."edit_del_pet.php"."></a>"."</td>";
+                    echo "<td>"."<a class='btn btn-warning' href="."edit_del_pet.php".">แก้ไข</a>"."</td>";
                     echo "</tr>";
                 }
 
