@@ -5,9 +5,17 @@ if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
     $sql = "SELECT * FROM `pets` WHERE owner_id = (SELECT owner_id from owner where owner_username = '$username')";
+    $sql2 = "SELECT * FROM owner WHERE owner_username = '$username'";
+    
     $result = $conn->query($sql);
     
     if(!$result){
+        die("Error : ". $conn->$conn_error);
+    }
+
+    $result2 = $conn->query($sql2);
+    
+    if(!$result2){
         die("Error : ". $conn->$conn_error);
     }
 
