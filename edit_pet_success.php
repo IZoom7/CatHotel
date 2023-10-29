@@ -1,0 +1,21 @@
+<?php
+require 'dbconn.php';
+$sql_update="UPDATE pets SET pet_name='$_POST[pet_name]',pet_type='$_POST[pet_type]' ,pet_breed='$_POST[pet_breed]' ,age='$_POST[age]',pet_detail='$_POST[pet_detail]',pet_image='$_POST[pet_image]' WHERE pet_id='$_POST[pet_id]' ";
+
+$result= $conn->query($sql_update);
+
+if(!$result) {
+    die("Error...: ". $conn->error);
+} else {
+
+echo '<body><script>
+Swal.fire({
+    icon: "success",
+    title: "เพิ่มชื่อสัตว์เลี้ยงสำเร็จ",
+    text: "รอซักครู่นะเหมียว..."
+});
+</script></body>';
+header("refresh: 1; url=https://petvilla.online/reservation.php");
+}
+
+?>
