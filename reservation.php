@@ -386,5 +386,29 @@ if (isset($_SESSION['username'])) {
         </div>
     </footer>
 </body>
+<script>
 
+const logoutLinks = document.querySelectorAll('.logout');
+logoutLinks.forEach((link) => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault(); // ป้องกันการนำทางไปยัง index.html โดยค่าพื้นฐานของลิงค์
+
+    Swal.fire({
+      title: 'ยืนยันการออกจากระบบ',
+      text: 'คุณแน่ใจหรือไม่ว่าต้องการออกจากระบบ?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'ใช่',
+      cancelButtonText: 'ยกเลิก',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // ทำการออกจากระบบ
+        // ตรงนี้คุณสามารถเพิ่มโค้ดเพื่อนำผู้ใช้ออกจากระบบ เช่น การลบคุกกี้หรือทำการตัดการเชื่อมต่อ
+        window.location.href = 'index.php'; // นำทางไปยังหน้า index.html หรืออีกหน้าที่คุณต้องการ
+      }
+    });
+  });
+});
+
+</script>
 </html>
