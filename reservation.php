@@ -4,7 +4,7 @@
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
-    $sql = "SELECT * FROM pets WHERE owner_id = (SELECT owner_id from owner where owner_username = '$username')";
+    $sql = "SELECT *FROM pets INNER JOIN owner ON pets.owner_id = owner.owner_id WHERE owner_username = '$username'";
 
     
     $result = $conn->query($sql);
@@ -99,22 +99,21 @@ if (isset($_SESSION['username'])) {
         <a href="employee_chat.php">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
 
-        <!-- <div style="position: absolute; font-size: 18px; right: 20%; bottom: 86%; background-color:#0f645b; color: white; border-radius: 30px; padding-top: 10px; padding-left: 15px; padding-right: 0px; text-align: center;">
+        <div style="position: absolute; font-size: 18px; right: 20%; bottom: 86%; background-color:#0f645b; color: white; border-radius: 30px; padding-top: 10px; padding-left: 15px; padding-right: 0px; text-align: center;">
             <img style="margin-right: 210px; margin-bottom:-41px; width: 28px; height: 28px;" src="img/user_icon01.png" alt="">
             
             <?php
-                   /* if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "<p>".$row['owner_name']."</p>";  
-                        }
-                    }else {
+                   if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc(); // อ่านแค่รายการแรก
+                        echo "<p>" . $row['owner_name'] . "</p>"; // แสดงข้อมูล
+                    } else {
                         echo "0 results";
                     }
-                    $conn->close(); */
+                    $conn->close(); 
                 ?>
             
-              
-        </div> -->
+            
+        </div>
                        
         
         <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
