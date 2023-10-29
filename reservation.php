@@ -102,10 +102,10 @@ if (isset($_SESSION['username'])) {
     
    <!--------------------------------รายชื่อสัตว์+เพิ่ม-----------------------------------> 
   
-  <h3>รายชื่อสัตว์เลี้ยงที่คุณมี</h3>
+  <h3 style="margin: left 200px;">รายชื่อสัตว์เลี้ยงที่คุณมี</h3>
 
 
-  <div class="pet-group">
+  <div style="margin: left 200px;" class="pet-group">
     <?php
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
@@ -114,7 +114,7 @@ if (isset($_SESSION['username'])) {
             echo '<h5>' . $row['pet_name'] . '</h5>';
             echo '<p>สายพันธุ์ : ' . $row['pet_breed'] . '</p>';
             echo '<div class="botton-grp">';
-            echo '<a id="edit-pet class="btn btn-warning" href="edit_del_pet.php">' . 'แก้ไข' . '</a>';
+            echo '<a id="edit-pet" class="btn btn-warning" href="edit_del_pet.php">' . 'แก้ไข' . '</a>';
             echo '<a id="del-pet" class="btn btn-danger" href="#">' . 'ลบ' . '</a>';
             echo '</div>';
             echo '</div>';
