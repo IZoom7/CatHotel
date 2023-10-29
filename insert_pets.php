@@ -135,6 +135,7 @@ if (isset($_SESSION['username'])) {
                         <option value="สีสวาด">สีสวาด</option>
                         <option value="เมนคูน">เมนคูน</option>
                         <option value="แร็กดอล">แร็กดอล</option>
+                        <option value="บอร์ซอย">บอร์ซอย</option>
                         <option value="เบงกอล">เบงกอล</option>
                         <option value="พันธุ์ทาง">พันธุ์ทาง</option>
                         <option value="ไม่ทราบ">ไม่ทราบ</option>
