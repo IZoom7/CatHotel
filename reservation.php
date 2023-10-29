@@ -35,6 +35,57 @@ if (isset($_SESSION['username'])) {
         rel="stylesheet">
     <link rel="icon" href="img/cat_icon01.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        .pet-group
+        {
+            display: flex;
+            padding-top: 60px;
+        }
+        .pet-card
+        {
+            border: 1px grey solid;
+            border-radius: 10px;
+            margin-left: 30px;
+            padding: 10px;
+            background-color: #efefef;
+        }
+        
+        .pet-card h5
+        {
+            padding-top: 15px;
+            padding-left: 10px;
+        }
+        .pet-card p
+        {
+            padding-left: 10px;
+        }
+        
+        .pet-card img
+        {
+            width: 250px;
+            height: 130px;
+            border-radius: 5px;
+        }
+        .botton-grp
+        {
+            display: flex;
+            
+        }
+        #edit-pet
+        {
+            width: 70%;
+            
+        }
+        #del-pet
+        {
+            width: 30%;
+            margin-left: 10px;
+        }
+
+    </style>
+
+
 </head>
 
 <body class="loginmenu">
@@ -55,11 +106,43 @@ if (isset($_SESSION['username'])) {
 
   <div>
 
-
-
-
-
+  <div class="pet-group">
+        
   
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="pet-card">';
+                echo $row['pet_image'];
+                echo '<h5>'.$row['pet_name'].'</h5>';
+                echo '<p>'.'สายพันธุ์ : '.$row['pet_breed'].'</p>';
+                echo '<div class="botton-grp">';
+                echo '<a href="edit_del_pet.php">'.'แก้ไข'.'</a>';
+                echo '<a href="#">'.'ลบ'.'</a>';
+                echo '</div>';
+
+                echo '<a href="insert_pets.php">
+                <div style="width: 250px; height: 275px; display: flex; flex-direction: column; align-items: center; justify-content: center;" class="pet-card">
+                    <img style="width: 50px; height: 50px;" src="img/plus.png" alt="">
+                    <h6 style="margin-top: 10px;">เพิ่มรายชื่อสัตว์เลี้ยง</h6>
+                </div>
+            </a>';
+
+                }
+
+                }
+            else {
+                echo "0 results";
+            }
+
+            $conn->close();
+                    ?>
+  
+            </div><br><br><br>
+
+
+
+
   </div>
   
   
