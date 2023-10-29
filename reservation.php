@@ -111,7 +111,7 @@ if (isset($_SESSION['username'])) {
             <?php
                    if ($result2->num_rows > 0) {
                         $row = $result2->fetch_assoc(); // อ่านแค่รายการแรก
-                        echo "<p>" . $row['owner_name'] . "</p>"; // แสดงข้อมูล
+                        echo "<p>".$row['owner_name']."</p>"; // แสดงข้อมูล
                     } else {
                         echo "0 results";
                     }
