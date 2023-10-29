@@ -33,10 +33,7 @@
         width: 200px;
         height: 200px;
     }
-    table
-    {
-        font-family: 'Kanit', sans-serif;
-    }
+
 
 </style>
 
@@ -60,7 +57,7 @@
     </div>
 <!---------------------------Main---------------------------------->
 
-<table  class="table table-striped">
+<table style="font-family: 'Kanit', sans-serif;" class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">PET-ID</th>
@@ -87,6 +84,7 @@ if ($result->num_rows > 0) {
                     <td>".$row["pet_detail"]."</td>";
                     echo "<td>".$row["pet_image"]."</td>";
                     echo "<td>".$row["owner_name"]."</td>";
+                    echo "<td>"."<a class='btn btn-warning' href="."edit_del_pet.php"."></a>"."</td>";
                     echo "</tr>";
                 }
 
