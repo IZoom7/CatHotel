@@ -40,6 +40,7 @@ if (isset($_SESSION['username'])) {
         .pet-group
         {
             display: flex;
+            flex-wrap: wrap;
             padding-top: 60px;
         }
         .pet-card
