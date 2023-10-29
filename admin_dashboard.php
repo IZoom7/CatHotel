@@ -68,6 +68,7 @@
                     <th scope="col-4">รายละเอียด</th>
                     <th scope="col-4">รูปภาพ</th>
                     <th scope="col-4">ชื่อเจ้าของ</th>
+                    <th scope="col-4">แก้ไขข้อมูล</th>
                 </tr>
             </thead>
             <tbody>
