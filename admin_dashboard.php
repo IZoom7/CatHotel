@@ -27,6 +27,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="icon" href="img/cat_icon01.png" >
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 <style>
@@ -50,8 +51,8 @@
     <nav>
         <a id="MeowVilla" href="admin_dashboard.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
         <a href="#">รายชื่อสัตว์เลี้ยง</a>
-        <a href="login.php">รายการห้องพัก</a>
-        <a href="login.php">กล้องวงจรปิด</a>
+        <a href="#">รายการห้องพัก</a>
+        <a href="#">กล้องวงจรปิด</a>
         <a href="admin_dash02.php">DashBoard</a>
                          
         <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
