@@ -4,7 +4,7 @@
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
-    $sql = "SELECT * FROM pets WHERE owner_id = (SELECT owner_id from owner where owner_username = '$username')";
+    $sql = "SELECT * FROM pets WHERE owner_id = (SELECT owner_id from owner where owner_username = '$username') UNION SELECT owner_name FROM owner WHERE owner_username = '$username'";
 
     
     $result = $conn->query($sql);
