@@ -23,6 +23,11 @@
         <a href="login.php">แอบส่องน้องๆ</a>
         <a href="login.php">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
+        
+        <a class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+        </a>
+    <button type="submit" class="btn btn-default">ค้นหา</button>
                          
         <a id="loginbtn" href="login.php">เข้าสู่ระบบ</a>
         <a href="register.php">สมัครสมาชิก</a>
