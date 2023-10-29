@@ -64,7 +64,7 @@ if (isset($_SESSION['username'])) {
         .pet-card img
         {
             width: 250px;
-            height: 130px;
+            height: 150px;
             border-radius: 5px;
         }
         .botton-grp
@@ -114,8 +114,8 @@ if (isset($_SESSION['username'])) {
             echo '<h5>' . $row['pet_name'] . '</h5>';
             echo '<p>สายพันธุ์ : ' . $row['pet_breed'] . '</p>';
             echo '<div class="botton-grp">';
-            echo '<a class="btn btn-warning" href="edit_del_pet.php">' . 'แก้ไข' . '</a>';
-            echo '<a class="btn btn-danger" href="#">' . 'ลบ' . '</a>';
+            echo '<a id="edit-pet class="btn btn-warning" href="edit_del_pet.php">' . 'แก้ไข' . '</a>';
+            echo '<a id="del-pet" class="btn btn-danger" href="#">' . 'ลบ' . '</a>';
             echo '</div>';
             echo '</div>';
         }
