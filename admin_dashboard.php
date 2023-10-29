@@ -1,7 +1,9 @@
 <?php
     require 'dbconn.php';
   
-    $sql = "SELECT * FROM pets LEFT JOIN owner";
+    $sql = "SELECT pets.*, owner.owner_name AS owner_name FROM pets
+            LEFT JOIN owner ON pets.owner_id = owner.owner_id;";
+    
     $result = $conn->query($sql);
     
     if(!$result){
@@ -79,7 +81,7 @@ if ($result->num_rows > 0) {
                     <td>".$row["age"]."</td>
                     <td>".$row["pet_detail"]."</td>";
                     echo "<td>".$row["pet_image"]."</td>";
-                    echo "<td>".$row["owner_id"]."</td>";
+                    echo "<td>".$row["owner_name"]."</td>";
                     echo "</tr>";
                 }
 
