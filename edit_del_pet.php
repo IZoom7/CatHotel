@@ -87,7 +87,8 @@ if (isset($_SESSION['username'])) {
 
     <!---------------------------Content------------------------------>
 
-
+    <div class="login-bar">
+    
     <form action="edit_pet_success.php" method="post" id="login-form">
 
 <div class="d-flex flex-wrap align-items-start">
@@ -204,6 +205,7 @@ if (isset($_SESSION['username'])) {
     <a style="margin-right: 150px;" class="btn btn-secondary" href="reservation.php">กลับ</a>
 </div>
 </form>
+</div>
 
 
 
