@@ -1,7 +1,7 @@
 <?php
     require 'dbconn.php';
   
-    $sql = "SELECT * FROM pets";
+    $sql = "SELECT * FROM pets LEFT JOIN owner";
     $result = $conn->query($sql);
     
     if(!$result){

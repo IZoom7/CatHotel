@@ -106,6 +106,7 @@ if (isset($_SESSION['username'])) {
                         <option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
                         <option value="คาวาเลียร์ คิง ชาลส์ สแปเนียล">คาวาเลียร์ คิง ชาลส์ สแปเนียล</option>
                         <option value="ชิบะ">ชิบะ</option>
+                        <option value="ชิสุ">ชิสุ</option>
                         <option value="ดัชชุน">ดัชชุน</option>
                         <option value="บอร์เดอร์ คอลลี่">บอร์เดอร์ คอลลี่</option>
                         <option value="บาเซนจิ">บาเซนจิ</option>
@@ -135,6 +136,8 @@ if (isset($_SESSION['username'])) {
                         <option value="เมนคูน">เมนคูน</option>
                         <option value="แร็กดอล">แร็กดอล</option>
                         <option value="เบงกอล">เบงกอล</option>
+                        <option value="พันธุ์ทาง">พันธุ์ทาง</option>
+                        <option value="ไม่ทราบ">ไม่ทราบ</option>
 
                     </select>
                 </div>
