@@ -122,7 +122,7 @@ if (isset($_SESSION['username'])) {
     }
     // เพิ่ม "เพิ่มรายชื่อสัตว์เลี้ยง" นอกจากลูป
     ?>
-    <a style="text-decoration: none; href="insert_pets.php">
+    <a style="text-decoration: none;" href="insert_pets.php">
         <div style="text-decoration: none; color: #707070; width: 250px; height: 295px; display: flex; flex-direction: column; align-items: center; justify-content: center;" class="pet-card">
             <img style="width: 50px; height: 50px;" src="img/plus.png" alt="">
             <h6 style="text-decoration: none; margin-top: 10px;">เพิ่มรายชื่อสัตว์เลี้ยง</h6>
