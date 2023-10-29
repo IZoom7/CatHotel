@@ -38,7 +38,7 @@ if (isset($_SESSION['username'])) {
 
     <nav>
         <a id="MeowVilla" href="home_session.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
-        <a href="insert_pets.php">จองห้องพักสัตว์เลี้ยง</a>
+        <a href="reservation.php">จองห้องพักสัตว์เลี้ยง</a>
         <a href="#">แอบส่องน้องๆ</a>
         <a href="employee_chat.php">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
