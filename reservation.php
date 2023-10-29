@@ -110,12 +110,12 @@ if (isset($_SESSION['username'])) {
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo '<div class="pet-card">';
-            echo '<img src="' . $row['pet_image'] . '" alt="">';
+            echo $row['pet_image'];
             echo '<h5>' . $row['pet_name'] . '</h5>';
             echo '<p>สายพันธุ์ : ' . $row['pet_breed'] . '</p>';
             echo '<div class="botton-grp">';
-            echo '<a href="edit_del_pet.php">' . 'แก้ไข' . '</a>';
-            echo '<a href="#">' . 'ลบ' . '</a>';
+            echo '<a class="btn btn-warning" href="edit_del_pet.php">' . 'แก้ไข' . '</a>';
+            echo '<a class="btn btn-danger" href="#">' . 'ลบ' . '</a>';
             echo '</div>';
             echo '</div>';
         }
