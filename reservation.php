@@ -90,12 +90,34 @@ if (isset($_SESSION['username'])) {
 </head>
 
 <body class="loginmenu">
-    <nav>
-        <a id="MeowVilla" href="index.php"><img src="img/PetVilla_Logo.png" alt=""></a>
-        <a href="#">จองห้องพักสัตว์เลี้ยง</a>
+<nav>
+        <a id="MeowVilla" href="home_session.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
+        <a href="reservation.php">จองห้องพักสัตว์เลี้ยง</a>
         <a href="#">แอบส่องน้องๆ</a>
-        <a href="#">ติดต่อพี่เลี้ยง</a>
+        <a href="employee_chat.php">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
+
+        <div style="position: absolute; font-size: 18px; right: 20%; bottom: 86%; background-color:#0f645b; color: white; border-radius: 30px; padding-top: 10px; padding-left: 15px; padding-right: 0px; text-align: center;">
+            <img style="margin-right: 210px; margin-bottom:-41px; width: 28px; height: 28px;" src="img/user_icon01.png" alt="">
+            
+            <?php
+                    if ($result->num_rows > 0) {
+                        while($row = $result->fetch_assoc()) {
+                            echo "<p>".$row['owner_name']."</p>";  
+                        }
+                    }else {
+                        echo "0 results";
+                    }
+                    $conn->close();
+                ?>
+            
+              
+        </div>
+                       
+        
+        <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
+
+
     </nav>
     <div class="bottom-stroke">
         <br>
