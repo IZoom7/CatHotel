@@ -4,17 +4,16 @@ if (!isset($_GET['pet_id'])) {
     header("refresh: 0; url=https://petvilla.online/reservation.php");
 }
 
+$sql = "SELECT * FROM pets WHERE pet_id = '$_GET[pet_id]'";
+$result = $conn->query($sql);
+$row = mysqli_fetch_array($result);
 
 session_start();
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
-    $sql = "SELECT * FROM pets WHERE pet_id = '$_GET[pet_id]'";
     $sql2 = "SELECT owner_name FROM owner WHERE owner_username = '$username'";
 
-
-    $result = $conn->query($sql);
-    $row = mysqli_fetch_array($result);
 
     if (!$result) {
         die("Error : " . $conn->$conn_error);
