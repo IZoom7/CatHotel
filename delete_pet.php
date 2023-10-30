@@ -5,7 +5,6 @@
 require 'dbconn.php';
 
 if(isset($_GET['pet_id'])) {
-    $pet_id = $_GET['pet_id'];
     
     // แสดง SweetAlert เพื่อยืนยันการลบข้อมูล
     echo '<script>
@@ -33,7 +32,7 @@ if(isset($_GET['pet_id'])) {
 
 function deletePet($pet_id) {
     global $conn;
-    $sql_update = "DELETE FROM `pets` WHERE `pet_id` = '$pet_id'";
+    $sql_update = "DELETE FROM pets WHERE pet_id = '$pet_id'";
     $result = $conn->query($sql_update);
 
     if (!$result) {
