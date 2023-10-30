@@ -3,7 +3,7 @@
 
 <?php
 require 'dbconn.php';
-if(isset($_GET['sid'])){
+if(isset($_GET['pet_id'])){
     header("refresh: 0; url=google.com");
 }
 ?>
