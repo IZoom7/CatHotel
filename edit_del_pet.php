@@ -101,29 +101,54 @@ if (isset($_SESSION['username'])) {
 
     <div class="login-bar">
 
-    <form action="edit_pet_success.php" method="post" id="login-form"> 
+    <form action="edit_pet_success.php" method="post"> 
         <input type="hidden" name="pet_id" value="<?=$row['pet_id'];?>">
-        <label for="pet_name">ชื่อสัตว์เลี้ยง:</label>
-        <input type="text" name="pet_name" value="<?=$row['pet_name'];?>"><br>
+        
+        <div class="input-group mb-3" style="flex: 70;">
+                    <span class="input-group-text" id="basic-addon1">ชื่อสัตว์เลี้ยง</span>
+                    <input style="width: 60%;" type="text" class="form-control" 
+                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_name" required>
+        </div>
+        
+        <div class="input-group mb-3" style="flex: 70;">
+                    <span class="input-group-text" id="basic-addon1">อายุ</span>
+                    <input style="width: 60%;" type="text" class="form-control" 
+                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="age" required>
+        </div>
 
-        <label for="age">อายุ:</label>
-        <input type="text" name="age" value="<?=$row['age'];?>"><br>
+        <div class="input-group mb-3" style="flex: 70;">
+                    <span class="input-group-text" id="basic-addon1">ประเภทสัตว์เลี้ยง</span>
+                    <input style="width: 60%;" type="text" class="form-control" 
+                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_type" required>
+        </div>
+        
+        <div class="input-group mb-3" style="flex: 70;">
+                    <span class="input-group-text" id="basic-addon1">สายพันธุ์</span>
+                    <input style="width: 60%;" type="text" class="form-control" 
+                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_breed" required>
+        </div>
 
-        <label for="pet_type">ประเภทสัตว์เลี้ยง:</label>
-        <input type="text" name="pet_type" value="<?=$row['pet_type'];?>"><br>
+        <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
+                <input type="text" placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
+                    id="exampleFormControlTextarea1"  name="pet_detail">
+                
+                <!-- <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
+                    id="exampleFormControlTextarea1" rows="3" name="pet_detail"></textarea> -->
 
-        <label for="pet_breed">สายพันธุ์:</label>
-        <input type="text" name="pet_breed" value="<?=$row['pet_breed'];?>"><br>
 
-        <label for="pet_detail">รายละเอียดเพิ่มเติม:</label>
-        <input type="text" name="pet_detail" value="<?=$row['pet_detail'];?>"><br>
+            </div>
 
-        <label for="pet_image">รูปภาพ:</label>
-        <textarea id="uppic" name="pet_image" id="pet_image" cols="3" rows="1"><?=$row['pet_image'];?></textarea>
+            <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
+                    <textarea name="pet_image" class="form-control" id="uppic" cols="2" rows="1"></textarea>
+                </div>
 
+
+        
         <br><br>
-        <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="บันทึกข้อมูล">
-        <a style="margin-right: 150px;" class="btn btn-secondary" href="reservation.php">กลับ</a>
+        <input id="login-form" style="margin-right: 15px;" class="btn btn-success" type="submit" value="บันทึกข้อมูล">
+        <a id="login-form" style="margin-right: 150px;" class="btn btn-secondary" href="reservation.php">กลับ</a>
     
 
     </form>

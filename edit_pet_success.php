@@ -3,7 +3,7 @@
 
 <?php
 require 'dbconn.php';
-$sql_update="UPDATE pets SET pet_name='$_POST[pet_name]',pet_type='$_POST[pet_type]' ,pet_breed='$_POST[pet_breed]' ,age='$_POST[age]',pet_detail='$_POST[pet_detail]',pet_image='$_POST[pet_image]' WHERE pet_id='$_GET[pet_id]' ";
+$sql_update="UPDATE pets SET pet_name='$_POST[pet_name]',pet_type='$_POST[pet_type]' ,pet_breed='$_POST[pet_breed]' ,age='$_POST[age]',pet_detail='$_POST[pet_detail]',pet_image='$_POST[pet_image]' WHERE pet_id='$_POST[pet_id]'";
 
 $result= $conn->query($sql_update);
 
