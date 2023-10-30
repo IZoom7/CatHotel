@@ -1,4 +1,4 @@
-<body>
+<body style="font-family: 'Itim', cursive;">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <?php
@@ -20,9 +20,13 @@ if(isset($_GET['pet_id'])) {
         if (result.isConfirmed) {
             // ถ้ายืนยันการลบให้ลบข้อมูล
             deletePet(' . $pet_id . ');
+        } else {
+            // ถ้าคลิก "ไม่" ให้นำทางไปที่ reservation.php
+            window.location.href = "reservation.php";
         }
     });
-    </script>';
+</script>
+';
 } else {
     echo "ไม่มีข้อมูลสำหรับการลบ";
 }
