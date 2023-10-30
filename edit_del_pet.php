@@ -7,6 +7,13 @@ if (!isset($_GET['pet_id'])) {
 $sql = "SELECT * FROM pets WHERE pet_id = '$_GET[pet_id]'";
 $result = $conn->query($sql);
 $row = mysqli_fetch_array($result);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc(); // ดึงข้อมูลและใส่ใน $row
+} else {
+    echo "ไม่พบข้อมูลสัตว์เลี้ยง"; // ในกรณีที่ไม่พบข้อมูล
+}
+
+
 
 session_start();
 if (isset($_SESSION['username'])) {
@@ -120,6 +127,7 @@ if (isset($_SESSION['username'])) {
 
     </form>
 
+            
 
     </div>
 
