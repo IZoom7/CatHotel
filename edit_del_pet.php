@@ -48,7 +48,8 @@ if (isset($_SESSION['username'])) {
         rel="stylesheet">
     <link rel="icon" href="img/cat_icon01.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload" data-auto-insert="html-embed" data-sibling="#uppic" data-palette="blue"></script>
+    <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload" data-auto-insert="html-embed"
+        data-sibling="#uppic" data-palette="blue"></script>
 
 
 </head>
@@ -97,121 +98,142 @@ if (isset($_SESSION['username'])) {
             <div class="d-flex flex-wrap align-items-start">
                 <div class="input-group mb-3" style="flex: 70;">
                     <span class="input-group-text" id="basic-addon1">ชื่อสัตว์เลี้ยง</span>
-                    <input value="<?= $row['pet_name']; ?>" style="width: 60%;" type="text" class="form-control"
-                        placeholder="กรุณากรอกชื่อสัตว์เลี้ยง" aria-label="กรุณากรอกชื่อสัตว์เลี้ยง"
-                        aria-describedby="basic-addon1" name="pet_name" required>
+                    <input value="<?= htmlspecialchars($row['pet_name']); ?>" style="width: 60%;" type="text"
+                        class="form-control" placeholder="กรุณากรอกชื่อสัตว์เลี้ยง"
+                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_name" required>
                 </div>
                 <div class="input-group mb-3" style="flex: 30;">
                     <select style="width: 100%;" class="form-select" aria-label="Your Pet's Age" name="age">
-                        <option selected>อายุ</option>
-                        <option value="น้อยกว่า 1 ปี">น้อยกว่า 1 ปี</option>
-                        <option value="มากกว่า 1 ปี">มากกว่า 1 ปี</option>
-                        <option value="2 ปีขึ้นไป">2 ปีขึ้นไป</option>
+                        <option value="อายุ" <?= ($row['age'] == 'อายุ') ? 'selected' : ''; ?>>อายุ</option>
+                        <option value="น้อยกว่า 1 ปี" <?= ($row['age'] == 'น้อยกว่า 1 ปี') ? 'selected' : ''; ?>>น้อยกว่า 1
+                            ปี</option>
+                        <option value="มากกว่า 1 ปี" <?= ($row['age'] == 'มากกว่า 1 ปี') ? 'selected' : ''; ?>>มากกว่า 1 ปี
+                        </option>
+                        <option value="2 ปีขึ้นไป" <?= ($row['age'] == '2 ปีขึ้นไป') ? 'selected' : ''; ?>>2 ปีขึ้นไป
+                        </option>
                     </select>
                 </div>
-            </div>
-
-
-
-            <div class="d-flex" style="width: 100%;">
                 <div class="input-group mb-3">
                     <select style="margin-right: 20px;" class="form-select" aria-label="Choose Your Pet's Type"
                         name="pet_type">
-                        <option selected>ประเภทสัตว์เลี้ยง</option>
-                        <option value="สุนัข">สุนัข</option>
-                        <option value="แมว">แมว</option>
-                        <option value="Special">Special</option>
+                        <option value="ประเภทสัตว์เลี้ยง" <?= ($row['pet_type'] == 'ประเภทสัตว์เลี้ยง') ? 'selected' : ''; ?>>ประเภทสัตว์เลี้ยง</option>
+                        <option value="สุนัข" <?= ($row['pet_type'] == 'สุนัข') ? 'selected' : ''; ?>>สุนัข</option>
+                        <option value="แมว" <?= ($row['pet_type'] == 'แมว') ? 'selected' : ''; ?>>แมว</option>
+                        <option value="Special" <?= ($row['pet_type'] == 'Special') ? 'selected' : ''; ?>>Special</option>
                     </select>
                 </div>
-
                 <div class="input-group mb-3">
                     <select class="form-select" aria-label="Choose Your Pet's Breed" name="pet_breed">
-                        <option selected>สายพันธ์ุ</option>
-                        <option value="ลิงซ์ยูเรเซีย">ลิงซ์ยูเรเซีย</option>
-                        <option value="บ๊อบแคท">บ๊อบแคท</option>
-                        <option value="คาราคัล">คาราคัล</option>
-                        <option value="เซอร์วัล">เซอร์วัล</option>
-                        <option value="อเมริกันช็อตแฮร์">อเมริกันช็อตแฮร์</option>
-                        <option value="บริติชช็อตแฮร์">บริติชช็อตแฮร์</option>
-                        <option value="สก๊อตติชโฟลด์">สก๊อตติชโฟลด์</option>
-                        <option value="รัสเซียนบลู">รัสเซียนบลู</option>
-                        <option value="วิเชียรมาศ">วิเชียรมาศ</option>
-                        <option value="เปอร์เซีย">เปอร์เซีย</option>
-                        <option value="ชิวาวา">ชิวาวา</option>
-                        <option value="บีเกิ้ล">บีเกิ้ล</option>
-                        <option value="บูลด็อก">บูลด็อก</option>
-                        <option value="ปอมเมอเรเนียน">ปอมเมอเรเนียน</option>
-                        <option value="คาวาเลียร์ คิง ชาลส์ สแปเนียล">คาวาเลียร์ คิง ชาลส์ สแปเนียล</option>
-                        <option value="ชิบะ">ชิบะ</option>
-                        <option value="ชิสุ">ชิสุ</option>
-                        <option value="ดัชชุน">ดัชชุน</option>
-                        <option value="บอร์เดอร์ คอลลี่">บอร์เดอร์ คอลลี่</option>
-                        <option value="บาเซนจิ">บาเซนจิ</option>
-                        <option value="บิชอง ฟริเซ่">บิชอง ฟริเซ่</option>
-                        <option value="บูล เทอร์เรียร์">บูล เทอร์เรียร์</option>
-                        <option value="พุดเดิ้ลทอย<">พุดเดิ้ลทอย</option>
-                        <option value="มอลทีส">มอลทีส</option>
-                        <option value="ยอร์กเชียร์ เทอร์เรียร์">ยอร์กเชียร์ เทอร์เรียร์</option>
-                        <option value="ลาบราดอร์">ลาบราดอร์</option>
-                        <option value="อลาสกัน มาลามิวท์">อลาสกัน มาลามิวท์</option>
-                        <option value="อัฟกัน ฮาวด์">อัฟกัน ฮาวด์</option>
-                        <option value="เกรย์ฮาวด์">เกรย์ฮาวด์</option>
-                        <option value="เชทแลนด์ ชีพด็อก">เชทแลนด์ ชีพด็อก</option>
-                        <option value="เชาเชา">เชาเชา</option>
-                        <option value="เฟรนช์ บูลด็อก">เฟรนช์ บูลด็อก</option>
-                        <option value="เยอรมันเชพเพิร์ด">เยอรมันเชพเพิร์ด</option>
-                        <option value="โกลเด้น รีทริฟเวอร์">โกลเด้น รีทริฟเวอร์</option>
-                        <option value="ไซบีเรียน ฮัสกี">ไซบีเรียน ฮัสกี</option>
-                        <option value="ขาวมณี">ขาวมณี</option>
-                        <option value="สฟิงซ์">สฟิงซ์</option>
-                        <option value="อะบิสซิเนียน">อะบิสซิเนียน</option>
-                        <option value="อ็อกซี่แคท">อ็อกซี่แคท</option>
-                        <option value="เอ็กซ์โซติก ช็อตแฮร์">เอ็กซ์โซติก ช็อตแฮร์</option>
-                        <option value="นอร์วีเจียน ฟอเรสต์">นอร์วีเจียน ฟอเรสต์</option>
-                        <option value="มันช์กิ้น">มันช์กิ้น</option>
-                        <option value="สีสวาด">สีสวาด</option>
-                        <option value="เมนคูน">เมนคูน</option>
-                        <option value="แร็กดอล">แร็กดอล</option>
-                        <option value="บอร์ซอย">บอร์ซอย</option>
-                        <option value="เบงกอล">เบงกอล</option>
-                        <option value="พันธุ์ทาง">พันธุ์ทาง</option>
-                        <option value="ไม่ทราบ">ไม่ทราบ</option>
-
+                        <option value="สายพันธ์ุ" <?= ($row['pet_breed'] == 'สายพันธ์ุ') ? 'selected' : ''; ?>>สายพันธ์ุ
+                        </option>
+                        <option value="ลิงซ์ยูเรเซีย" <?= ($row['pet_breed'] == 'ลิงซ์ยูเรเซีย') ? 'selected' : ''; ?>>
+                            ลิงซ์ยูเรเซีย</option>
+                        <option value="บ๊อบแคท" <?= ($row['pet_breed'] == 'บ๊อบแคท') ? ' selected' : ''; ?>>บ๊อบแคท
+                        </option>
+                        <option value="คาราคัล" <?= ($row['pet_breed'] == 'คาราคัล') ? ' selected' : ''; ?>>คาราคัล
+                        </option>
+                        <option value="เซอร์วัล" <?= ($row['pet_breed'] == 'เซอร์วัล') ? ' selected' : ''; ?>>เซอร์วัล
+                        </option>
+                        <option value="อเมริกันช็อตแฮร์" <?= ($row['pet_breed'] == 'อเมริกันช็อตแฮร์') ? ' selected' : ''; ?>>อเมริกันช็อตแฮร์</option>
+                        <option value="บริติชช็อตแฮร์" <?= ($row['pet_breed'] == 'บริติชช็อตแฮร์') ? ' selected' : ''; ?>>
+                            บริติชช็อตแฮร์</option>
+                        <option value="สก๊อตติชโฟลด์" <?= ($row['pet_breed'] == 'สก๊อตติชโฟลด์') ? ' selected' : ''; ?>>
+                            สก๊อตติชโฟลด์</option>
+                        <option value="รัสเซียนบลู" <?= ($row['pet_breed'] == 'รัสเซียนบลู') ? ' selected' : ''; ?>>
+                            รัสเซียนบลู</option>
+                        <option value="วิเชียรมาศ" <?= ($row['pet_breed'] == 'วิเชียรมาศ') ? ' selected' : ''; ?>>
+                            วิเชียรมาศ</option>
+                        <option value="เปอร์เซีย" <?= ($row['pet_breed'] == 'เปอร์เซีย') ? ' selected' : ''; ?>>เปอร์เซีย
+                        </option>
+                        <option value="ชิวาวา" <?= ($row['pet_breed'] == 'ชิวาวา') ? ' selected' : ''; ?>>ชิวาวา</option>
+                        <option value="บีเกิ้ล" <?= ($row['pet_breed'] == 'บีเกิ้ล') ? ' selected' : ''; ?>>บีเกิ้ล
+                        </option>
+                        <option value="บูลด็อก" <?= ($row['pet_breed'] == 'บูลด็อก') ? ' selected' : ''; ?>>บูลด็อก
+                        </option>
+                        <option value="ปอมเมอเรเนียน" <?= ($row['pet_breed'] == 'ปอมเมอเรเนียน') ? ' selected' : ''; ?>>
+                            ปอมเมอเรเนียน</option>
+                        <option value="คาวาเลียร์ คิง ชาลส์ สแปเนียล" <?= ($row['pet_breed'] == 'คาวาเลียร์ คิง ชาลส์ สแปเนียล') ? ' selected' : ''; ?>>คาวาเลียร์ คิง ชาลส์ สแปเนียล</option>
+                        <option value="ชิบะ" <?= ($row['pet_breed'] == 'ชิบะ') ? ' selected' : ''; ?>>ชิบะ</option>
+                        <option value="ชิสุ" <?= ($row['pet_breed'] == 'ชิสุ') ? ' selected' : ''; ?>>ชิสุ</option>
+                        <option value="ดัชชุน" <?= ($row['pet_breed'] == 'ดัชชุน') ? ' selected' : ''; ?>>ดัชชุน</option>
+                        <option value="บอร์เดอร์ คอลลี่" <?= ($row['pet_breed'] == 'บอร์เดอร์ คอลลี่') ? ' selected' : ''; ?>>บอร์เดอร์ คอลลี่</option>
+                        <option value="บาเซนจิ" <?= ($row['pet_breed'] == 'บาเซนจิ') ? ' selected' : ''; ?>>บาเซนจิ
+                        </option>
+                        <option value="บิชอง ฟริเซ่" <?= ($row['pet_breed'] == 'บิชอง ฟริเซ่') ? ' selected' : ''; ?>>บิชอง
+                            ฟริเซ่</option>
+                        <option value="บูล เทอร์เรียร์" <?= ($row['pet_breed'] == 'บูล เทอร์เรียร์') ? ' selected' : ''; ?>>บูล เทอร์เรียร์</option>
+                        <option value="พุดเดิลทอย<" <?= ($row['pet_breed'] == 'พุดเดิลทอย<') ? ' selected' : ''; ?>>
+                            พุดเดิลทอย</option>
+                        <option value="มอลทีส" <?= ($row['pet_breed'] == 'มอลทีส') ? ' selected' : ''; ?>>มอลทีส</option>
+                        <option value="ยอร์กเชียร์ เทอร์เรียร์" <?= ($row['pet_breed'] == 'ยอร์กเชียร์ เทอร์เรียร์') ? ' selected' : ''; ?>>ยอร์กเชียร์ เทอร์เรียร์</option>
+                        <option value="ลาบราดอร์" <?= ($row['pet_breed'] == 'ลาบราดอร์') ? ' selected' : ''; ?>>ลาบราดอร์
+                        </option>
+                        <option value="อลาสกัน มาลามิวท์" <?= ($row['pet_breed'] == 'อลาสกัน มาลามิวท์') ? ' selected' : ''; ?>>อลาสกัน มาลามิวท์</option>
+                        <option value="อัฟกัน ฮาวด์" <?= ($row['pet_breed'] == 'อัฟกัน ฮาวด์') ? ' selected' : ''; ?>>
+                            อัฟกัน ฮาวด์</option>
+                        <option value="เกรย์ฮาวด์" <?= ($row['pet_breed'] == 'เกรย์ฮาวด์') ? ' selected' : ''; ?>>
+                            เกรย์ฮาวด์</option>
+                        <option value="เชทแลนด์ ชีพด็อก" <?= ($row['pet_breed'] == 'เชทแลนด์ ชีพด็อก') ? ' selected' : ''; ?>>เชทแลนด์ ชีพด็อก</option>
+                        <option value="เชาเชา" <?= ($row['pet_breed'] == 'เชาเชา') ? ' selected' : ''; ?>>เชาเชา</option>
+                        <option value="เฟรนช์ บูลด็อก" <?= ($row['pet_breed'] == 'เฟรนช์ บูลด็อก') ? ' selected' : ''; ?>>
+                            เฟรนช์ บูลด็อก</option>
+                        <option value="เยอรมันเชพเพิร์ด" <?= ($row['pet_breed'] == 'เยอรมันเชพเพิร์ด') ? ' selected' : ''; ?>>เยอรมันเชพเพิร์ด</option>
+                        <option value="โกลเด้น รีทริฟเวอร์" <?= ($row['pet_breed'] == 'โกลเด้น รีทริฟเวอร์') ? ' selected' : ''; ?>>โกลเด้น รีทริฟเวอร์</option>
+                        <option value="ไซบีเรียน ฮัสกี" <?= ($row['pet_breed'] == 'ไซบีเรียน ฮัสกี') ? ' selected' : ''; ?>>ไซบีเรียน ฮัสกี</option>
+                        <option value="ขาวมณี" <?= ($row['pet_breed'] == 'ขาวมณี') ? ' selected' : ''; ?>>ขาวมณี</option>
+                        <option value="สฟิงซ์" <?= ($row['pet_breed'] == 'สฟิงซ์') ? ' selected' : ''; ?>>สฟิงซ์</option>
+                        <option value="อะบิสซิเนียน" <?= ($row['pet_breed'] == 'อะบิสซิเนียน') ? ' selected' : ''; ?>>
+                            อะบิสซิเนียน</option>
+                        <option value="อ็อกซี่แคท" <?= ($row['pet_breed'] == 'อ็อกซี่แคท') ? ' selected' : ''; ?>>
+                            อ็อกซี่แคท</option>
+                        <option value="เอ็กซ์โซติก ช็อตแฮร์" <?= ($row['pet_breed'] == 'เอ็กซ์โซติก ช็อตแฮร์') ? ' selected' : ''; ?>>เอ็กซ์โซติก ช็อตแฮร์</option>
+                        <option value="นอร์วีเจียน ฟอเรสต์" <?= ($row['pet_breed'] == 'นอร์วีเจียน ฟอเรสต์') ? ' selected' : ''; ?>>นอร์วีเจียน ฟอเรสต์</option>
+                        <option value="มันช์กิ้น" <?= ($row['pet_breed'] == 'มันช์กิ้น') ? ' selected' : ''; ?>>มันช์กิ้น
+                        </option>
+                        <option value="สีสวาด" <?= ($row['pet_breed'] == 'สีสวาด') ? ' selected' : ''; ?>>สีสวาด</option>
+                        <option value="เมนคูน" <?= ($row['pet_breed'] == 'เมนคูน') ? ' selected' : ''; ?>>เมนคูน</option>
+                        <option value="แร็กดอล" <?= ($row['pet_breed'] == 'แร็กดอล') ? ' selected' : ''; ?>>แร็กดอล
+                        </option>
+                        <option value="บอร์ซอย" <?= ($row['pet_breed'] == 'บอร์ซอย') ? ' selected' : ''; ?>>บอร์ซอย
+                        </option>
+                        <option value="เบงกอล" <?= ($row['pet_breed'] == 'เบงกอล') ? ' selected' : ''; ?>>เบงกอล</option>
+                        <option value="พันธุ์ทาง" <?= ($row['pet_breed'] == 'พันธุ์ทาง') ? ' selected' : ''; ?>>พันธุ์ทาง
+                        </option>
+                        <option value="ไม่ทราบ" <?= ($row['pet_breed'] == 'ไม่ทราบ') ? ' selected' : ''; ?>>ไม่ทราบ
+                        </option>
+                        <!-- เพิ่มตัวเลือกของสายพันธ์ุที่เหลือที่นี่ -->
                     </select>
                 </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
+                    <input value="<?= htmlspecialchars($row['pet_detail']); ?>" type="text"
+                        placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
+                        id="exampleFormControlTextarea1" name="pet_detail">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
+                    <input value="<?= htmlspecialchars($row['pet_image']); ?>" name="pet_image" class="form-control"
+                        id="uppic" cols="2" rows="1">
+                </div>
+                <div style="font-family: 'Kanit', sans-serif;">
+                    <input style="margin-right: 15px;" class="btn btn-success" name="submit" type="submit"
+                        value="แก้ไขข้อมูล">
+                    <a style="margin-right: 150px;" class="btn btn-secondary" href="reservation.php">กลับ</a>
+                </div>
+
+
+                <div style="font-family: 'Kanit', sans-serif;">
+                    <input style="margin-right: 15px;" class="btn btn-success" name="submit" type="submit"
+                        value="แก้ไขข้อมูล">
+                    <a style="margin-right: 150px;" class="btn btn-secondary" href="reservation.php">กลับ</a>
+                </div>
+
+
             </div>
-            <br>
 
+            <br><br>
 
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
-                <input value="<?= $row['pet_detail']; ?>" type="text"
-                    placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
-                    id="exampleFormControlTextarea1" name="pet_detail">
-
-                <!-- <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
-        id="exampleFormControlTextarea1" rows="3" name="pet_detail"></textarea> -->
-
-
-            </div>
-
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
-                <textarea value="<?= $row['pet_image']; ?>" name="pet_image" class="form-control" id="uppic" cols="2"
-                    rows="1"></textarea>
-            </div>
-
-            <div style="font-family: 'Kanit', sans-serif;">
-        <input style="margin-right: 15px;" class="btn btn-success" name="submit" type="submit" value="แก้ไขข้อมูล">
-        <a style="margin-right: 150px;" class="btn btn-secondary" href="reservation.php">กลับ</a>
-    </div>
-
-
-    </div>
-
-    <br><br>
-    
-    </form>
+        </form>
     </div>
 
 
