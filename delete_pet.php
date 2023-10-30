@@ -30,6 +30,11 @@ if(isset($_GET['pet_id'])) {
     echo "ไม่มีข้อมูลสำหรับการลบ";
 }
 
+
+?>
+
+<script>
+
 function deletePet($pet_id) {
     global $conn;
     $sql_update = "DELETE FROM pets WHERE pet_id = '$pet_id'";
@@ -50,10 +55,9 @@ function deletePet($pet_id) {
         </script>';
     }
 }
-?>
 
-</body>
 
+</script>
 
 
 
