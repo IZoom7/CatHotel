@@ -1,6 +1,6 @@
 <?php
 require 'dbconn.php';
-if (!isset($_GET['pet_name'])) {
+if (!isset($_GET['pet_id'])) {
     header("refresh: 0; url=https://petvilla.online/reservation.php");
 }
 
