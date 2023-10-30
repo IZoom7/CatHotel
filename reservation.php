@@ -145,7 +145,8 @@ if (isset($_SESSION['username'])) {
             echo '<p>สายพันธุ์ : ' . $row['pet_breed'] . '</p>';
             echo '<div class="botton-grp">';
             echo '<a id="edit-pet" class="btn btn-warning" href="edit_del_pet.php?pet_name='.$row['pet_name'].'">แก้ไข</a>';
-            echo '<a id="del-pet" class="btn btn-danger" href="#">ลบ</a>';            
+            echo '<a id="del-pet" class="btn btn-danger" href="#">ลบ</a>';
+
             echo '</div>';
             echo '</div>';
         }
