@@ -2,7 +2,7 @@
 require 'dbconn.php';
 if (!isset($_GET['pet_id'])) {
     header("refresh: 0; url=https://petvilla.online/reservation.php");
-}
+
 
 $sql = "SELECT * FROM pets WHERE pet_id = '$_GET[pet_id]'";
 $result = $conn->query($sql);
@@ -34,7 +34,7 @@ if (isset($_SESSION['username'])) {
 
 }
 
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -148,7 +148,6 @@ if (isset($_SESSION['username'])) {
         
         <br><br>
         <input id="login-form" style="margin-right: 15px;" class="btn btn-success" type="submit" value="บันทึกข้อมูล">
-        <a id="login-form" style="margin-right: 150px;" class="btn btn-danger" href="delete_pet.php?pet_id=<?php echo $row["pet_id"];?>">ลบข้อมูล</a>
         <a id="login-form" style="margin-right: 150px;" class="btn btn-secondary" href="reservation.php">กลับ</a>
         
     
