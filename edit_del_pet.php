@@ -125,13 +125,13 @@ if (isset($_SESSION['username'])) {
         
         <div class="input-group mb-3" style="flex: 70;">
                     <span class="input-group-text" id="basic-addon1">สายพันธุ์</span>
-                    <input style="width: 60%;" type="text" class="form-control" 
+                    <input value="<?=$rowz['pet_breed'];?>" style="width: 60%;" type="text" class="form-control" 
                         aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_breed" required>
         </div>
 
         <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
-                <input type="text" placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
+                <input value="<?=$rowz['pet_detail'];?>" type="text" placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
                     id="exampleFormControlTextarea1"  name="pet_detail">
                 
                 <!-- <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
@@ -142,7 +142,7 @@ if (isset($_SESSION['username'])) {
 
             <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
-                    <textarea name="pet_image" class="form-control" id="uppic" cols="2" rows="1"></textarea>
+                    <textarea name="pet_image" class="form-control" id="uppic" cols="2" rows="1"><?=$rowz['pet_image'];?></textarea>
                 </div>
 
 
