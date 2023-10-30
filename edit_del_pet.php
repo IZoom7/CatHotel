@@ -9,7 +9,7 @@ session_start();
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
-    $sql = "SELECT * FROM pets WHERE pet_name = '$_GET[pet_name]'";
+    $sql = "SELECT * FROM pets WHERE pet_id = '$_GET[pet_id]'";
     $sql2 = "SELECT owner_name FROM owner WHERE owner_username = '$username'";
 
 
