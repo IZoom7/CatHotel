@@ -88,7 +88,8 @@
                                 <td>".$row["pet_detail"]."</td>";
                                 echo "<td>".$row["pet_image"]."</td>";
                                 echo "<td>".$row["owner_name"]."</td>";
-                                echo "<td>"."<a class='btn btn-warning' href="."edit_del_pet.php".">แก้ไข</a>"."</td>";
+                                echo '<a id="edit-pet" class="btn btn-warning" href="edit_del_pet.php?pet_id='.$row['pet_id'].'">แก้ไข</a>';
+                                echo '<a id="del-pet" class="btn btn-danger" href="delete_pet.php?pet_id='.$row['pet_id'].'">ลบ</a>';
                                 echo "</tr>";
                             }
 

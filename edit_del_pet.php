@@ -97,7 +97,7 @@ if (isset($_GET['pet_id'])) {
                 $row = $result2->fetch_assoc(); // อ่านแค่รายการแรก
                 echo "<p>" . $row['owner_name'] . "</p>"; // แสดงข้อมูล
             } else {
-                echo "0 results";
+                echo "<p> Admin </p>";
             }
             $conn->close();
             ?>
