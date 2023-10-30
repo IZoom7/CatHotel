@@ -180,8 +180,9 @@ if (isset($_GET['pet_id'])) {
 
 
         </div>
-
-        <img id="imgbar" src="img/bobby.jpg" alt="">
+            <div id="imgbar">
+             <?= $rowz['pet_image']; ?>
+            </div>
 
     </div>
 
