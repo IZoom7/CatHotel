@@ -121,7 +121,7 @@ if (isset($_GET['pet_id'])) {
             <h4>แก้ไขข้อมูล</h4> <br>
 
             <form action="edit_pet_success.php" method="post">
-                <input type="hidden" name="pet_id" value="<?= $row['pet_id']; ?>">
+                <input type="hidden" name="pet_id" value="<?= $rowz['pet_id']; ?>">
 
                 <div class="input-group mb-3" style="flex: 70;">
                     <span class="input-group-text" id="basic-addon1">ชื่อสัตว์เลี้ยง</span>
