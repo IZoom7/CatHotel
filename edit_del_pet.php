@@ -5,35 +5,35 @@ if (!isset($_GET['pet_id'])) {
 }
 
 if (isset($_GET['pet_id'])) {
-$sql = "SELECT * FROM pets WHERE pet_id = '$_GET[pet_id]'";
-$result = $conn->query($sql);
-$rowz = mysqli_fetch_array($result);
+    $sql = "SELECT * FROM pets WHERE pet_id = '$_GET[pet_id]'";
+    $result = $conn->query($sql);
+    $rowz = mysqli_fetch_array($result);
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc(); // ดึงข้อมูลและใส่ใน $row
-} else {
-    echo "ไม่พบข้อมูลสัตว์เลี้ยง"; // ในกรณีที่ไม่พบข้อมูล
-}
-
-
-
-session_start();
-if (isset($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-
-    $sql2 = "SELECT owner_name FROM owner WHERE owner_username = '$username'";
-
-
-    if (!$result) {
-        die("Error : " . $conn->$conn_error);
-    }
-    $result2 = $conn->query($sql2);
-
-    if (!$result2) {
-        die("Error : " . $conn->$conn_error);
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc(); // ดึงข้อมูลและใส่ใน $row
+    } else {
+        echo "ไม่พบข้อมูลสัตว์เลี้ยง"; // ในกรณีที่ไม่พบข้อมูล
     }
 
-}
+
+
+    session_start();
+    if (isset($_SESSION['username'])) {
+        $username = $_SESSION['username'];
+
+        $sql2 = "SELECT owner_name FROM owner WHERE owner_username = '$username'";
+
+
+        if (!$result) {
+            die("Error : " . $conn->$conn_error);
+        }
+        $result2 = $conn->query($sql2);
+
+        if (!$result2) {
+            die("Error : " . $conn->$conn_error);
+        }
+
+    }
 }
 
 ?>
@@ -60,6 +60,16 @@ if (isset($_SESSION['username'])) {
     <script async src="//pic.in.th/sdk/pup.js" data-url="https://pic.in.th/upload" data-auto-insert="html-embed"
         data-sibling="#uppic" data-palette="blue"></script>
 
+        <style>
+
+        .bar-2
+        {
+            display: flex;
+            margin-right: 500px;
+            padding-bottom: 200px;
+        }
+
+        </style>
 
 </head>
 
@@ -100,40 +110,42 @@ if (isset($_SESSION['username'])) {
 
     <!---------------------------Content------------------------------>
 
+    <div class="bar-2">   
     <div class="login-bar">
 
-    <form action="edit_pet_success.php" method="post"> 
-        <input type="hidden" name="pet_id" value="<?=$row['pet_id'];?>">
-        
-        <div class="input-group mb-3" style="flex: 70;">
-                    <span class="input-group-text" id="basic-addon1">ชื่อสัตว์เลี้ยง</span>
-                    <input value="<?=$rowz['pet_name'];?>" style="width: 60%;" type="text" class="form-control" 
-                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_name" required>
-        </div>
-        
-        <div class="input-group mb-3" style="flex: 70;">
-                    <span class="input-group-text" id="basic-addon1">อายุ</span>
-                    <input value="<?=$rowz['age'];?>" style="width: 60%;" type="text" class="form-control" 
-                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="age" required>
-        </div>
+        <form action="edit_pet_success.php" method="post">
+            <input type="hidden" name="pet_id" value="<?= $row['pet_id']; ?>">
 
-        <div class="input-group mb-3" style="flex: 70;">
-                    <span class="input-group-text" id="basic-addon1">ประเภทสัตว์เลี้ยง</span>
-                    <input value="<?=$rowz['pet_type'];?>" style="width: 60%;" type="text" class="form-control" 
-                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_type" required>
-        </div>
-        
-        <div class="input-group mb-3" style="flex: 70;">
-                    <span class="input-group-text" id="basic-addon1">สายพันธุ์</span>
-                    <input value="<?=$rowz['pet_breed'];?>" style="width: 60%;" type="text" class="form-control" 
-                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_breed" required>
-        </div>
+            <div class="input-group mb-3" style="flex: 70;">
+                <span class="input-group-text" id="basic-addon1">ชื่อสัตว์เลี้ยง</span>
+                <input value="<?= $rowz['pet_name']; ?>" style="width: 60%;" type="text" class="form-control"
+                    aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_name" required>
+            </div>
 
-        <div class="mb-3">
+            <div class="input-group mb-3" style="flex: 70;">
+                <span class="input-group-text" id="basic-addon1">อายุ</span>
+                <input value="<?= $rowz['age']; ?>" style="width: 60%;" type="text" class="form-control"
+                    aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="age" required>
+            </div>
+
+            <div class="input-group mb-3" style="flex: 70;">
+                <span class="input-group-text" id="basic-addon1">ประเภทสัตว์เลี้ยง</span>
+                <input value="<?= $rowz['pet_type']; ?>" style="width: 60%;" type="text" class="form-control"
+                    aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_type" required>
+            </div>
+
+            <div class="input-group mb-3" style="flex: 70;">
+                <span class="input-group-text" id="basic-addon1">สายพันธุ์</span>
+                <input value="<?= $rowz['pet_breed']; ?>" style="width: 60%;" type="text" class="form-control"
+                    aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_breed" required>
+            </div>
+
+            <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">รายละเอียดเพิ่มเติม</label>
-                <input value="<?=$rowz['pet_detail'];?>" type="text" placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
-                    id="exampleFormControlTextarea1"  name="pet_detail">
-                
+                <input value="<?= $rowz['pet_detail']; ?>" type="text"
+                    placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
+                    id="exampleFormControlTextarea1" name="pet_detail">
+
                 <!-- <textarea placeholder="เช่น.....โรคประจำตัว อาหารโปรด ยาหรืออาหารที่แพ้" class="form-control"
                     id="exampleFormControlTextarea1" rows="3" name="pet_detail"></textarea> -->
 
@@ -141,26 +153,28 @@ if (isset($_SESSION['username'])) {
             </div>
 
             <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
-                    <textarea name="pet_image" class="form-control" id="uppic" cols="2" rows="1"><?=$rowz['pet_image'];?></textarea>
-                </div>
+                <span class="input-group-text" id="basic-addon1">เพิ่มรูปภาพ</span>
+                <textarea name="pet_image" class="form-control" id="uppic" cols="2"
+                    rows="1"><?= $rowz['pet_image']; ?></textarea>
+            </div>
 
 
-        
-        <br><br>
-        <input id="login-form" style="margin-right: 15px;" class="btn btn-success" type="submit" value="บันทึกข้อมูล">
-        <a id="login-form" style="margin-right: 150px;" class="btn btn-secondary" href="reservation.php">กลับ</a>
-        
-    
 
-    </form>
+            <br><br>
+            <input id="login-form" style="margin-right: 15px;" class="btn btn-success" type="submit"
+                value="บันทึกข้อมูล">
+            <a id="login-form" style="margin-right: 150px;" class="btn btn-secondary" href="reservation.php">กลับ</a>
 
-            
+
+
+        </form>
+
+
 
     </div>
 
 
-
+    </div>
 
 
 
