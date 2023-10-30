@@ -4,63 +4,56 @@
 <?php
 require 'dbconn.php';
 
-if(isset($_GET['pet_id'])) {
-    
-    // แสดง SweetAlert เพื่อยืนยันการลบข้อมูล
-    echo '<script>
-    Swal.fire({
-        title: "คุณแน่ใจหรือไม่?",
-        text: "คุณต้องการลบข้อมูลนี้ใช่หรือไม่?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "ใช่, ฉันต้องการลบ!",
-        cancelButtonText: "ไม่, ยกเลิก"
-    }).then(function(result) {
-        if (result.isConfirmed) {
-            // ถ้ายืนยันการลบให้ลบข้อมูล
-            deletePet(' . $pet_id . ');
-        } else {
-            // ถ้าคลิก "ไม่" ให้นำทางไปที่ reservation.php
-            window.location.href = "reservation.php";
-        }
-    });
-</script>
-';
-} else {
-    echo "ไม่มีข้อมูลสำหรับการลบ";
+// ตรวจสอบว่ามีการส่ง pet_id ผ่าน GET หรือไม่
+if (!isset($_GET['pet_id'])) {
+    header("refresh: 0; url=https://petvilla.online/reservation.php");
 }
 
+$pet_id = $_GET['pet_id'];
 
-?>
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirm_delete'])) {
+    // ผู้ใช้ยืนยันการลบ
+    // สร้างคำสั่ง SQL สำหรับลบข้อมูล
+    $sql_delete = "DELETE FROM pets WHERE pet_id = '$pet_id'";
 
-<script>
-
-function deletePet($pet_id) {
-    global $conn;
-    $sql_update = "DELETE FROM pets WHERE pet_id = '$pet_id'";
-    $result = $conn->query($sql_update);
+    $result = $conn->query($sql_delete);
 
     if (!$result) {
-        die("Error...: " . $conn->error);
+        die("Error: " . $conn->error);
     } else {
-        // แสดง SweetAlert หลังจากลบสำเร็จ
+        // ลบสำเร็จ
         echo '<script>
         Swal.fire({
             icon: "success",
             title: "ลบข้อมูลสำเร็จ",
             text: "รอซักครู่นะเหมียว..."
-        }).then(function() {
+        }).then(function(result) {
             window.location.href = "https://petvilla.online/reservation.php";
         });
         </script>';
     }
+} else {
+    // แสดงแบบฟอร์มยืนยันการลบ
+    echo '<script>
+    Swal.fire({
+        title: "ยืนยันการลบ",
+        text: "คุณต้องการลบข้อมูลนี้ใช่หรือไม่?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "ใช่, ลบ",
+        cancelButtonText: "ไม่, ยกเลิก"
+    }).then(function(result) {
+        if (result.isConfirmed) {
+            // ถ้าผู้ใช้ยืนยันการลบ
+            document.location.href = "delete.php?pet_id=' . $pet_id . '&confirm_delete=1";
+        } else {
+            // ถ้าผู้ใช้ยกเลิกการลบ
+            window.location.href = "https://petvilla.online/reservation.php";
+        }
+    });
+    </script>';
 }
-
-
-</script>
-
-
-
+?>
 
 
 
