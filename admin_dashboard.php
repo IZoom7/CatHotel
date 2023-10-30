@@ -36,10 +36,7 @@
         width: 200px;
         height: 120px;
     }
-    #tableadmin thead tr th td
-    {
-        font-family: 'Kanit', sans-serif;
-    }
+
 
 </style>
 
@@ -63,7 +60,7 @@
     </div>
 <!---------------------------Main---------------------------------->
 
-<table id="tableadmin" class="table table-striped">
+<table style="font-family: 'Kanit', sans-serif;" id="tableadmin" class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">PET-ID</th>
@@ -79,29 +76,29 @@
             </thead>
             <tbody>
 
-<?php
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<tr>
-                    <td>".$row["pet_id"]."</td>
-                    <td>".$row["pet_name"]."</td>
-                    <td>".$row["pet_type"]."</td>
-                    <td>".$row["pet_breed"]."</td>
-                    <td>".$row["age"]."</td>
-                    <td>".$row["pet_detail"]."</td>";
-                    echo "<td>".$row["pet_image"]."</td>";
-                    echo "<td>".$row["owner_name"]."</td>";
-                    echo "<td>"."<a class='btn btn-warning' href="."edit_del_pet.php".">แก้ไข</a>"."</td>";
-                    echo "</tr>";
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                                <td>".$row["pet_id"]."</td>
+                                <td>".$row["pet_name"]."</td>
+                                <td>".$row["pet_type"]."</td>
+                                <td>".$row["pet_breed"]."</td>
+                                <td>".$row["age"]."</td>
+                                <td>".$row["pet_detail"]."</td>";
+                                echo "<td>".$row["pet_image"]."</td>";
+                                echo "<td>".$row["owner_name"]."</td>";
+                                echo "<td>"."<a class='btn btn-warning' href="."edit_del_pet.php".">แก้ไข</a>"."</td>";
+                                echo "</tr>";
+                            }
+
                 }
+            else {
+                echo "0 results";
+            }
 
-    }
- else {
-    echo "0 results";
-}
-
-$conn->close();
-        ?>
+            $conn->close();
+                    ?>
     </tbody>
 </table>
 
