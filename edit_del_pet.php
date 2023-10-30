@@ -14,6 +14,7 @@ if (isset($_SESSION['username'])) {
 
 
     $result = $conn->query($sql);
+    $row = mysqli_fetch_array($result);
 
     if (!$result) {
         die("Error : " . $conn->$conn_error);
@@ -111,7 +112,7 @@ if (isset($_SESSION['username'])) {
         <input type="text" name="pet_detail" value="<?php echo $row['pet_detail'];?>"><br>
 
         <label for="pet_image">รูปภาพ:</label>
-        <textarea name="pet_image" id="pet_image" cols="3" rows="1"><?php echo $row['pet_image'];?></textarea>
+        <textarea id="uppic" name="pet_image" id="pet_image" cols="3" rows="1"><?php echo $row['pet_image'];?></textarea>
 
         <br><br>
         <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="บันทึกข้อมูล">
