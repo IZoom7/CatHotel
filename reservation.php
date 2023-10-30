@@ -29,7 +29,7 @@ if (isset($_SESSION['username'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title>PetVilla Login</title>
+    <title>PetReservation</title>
     <link rel="stylesheet" href="meowstyle.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
