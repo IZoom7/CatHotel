@@ -34,7 +34,7 @@
     td img
     {
         width: 200px;
-        height: 200px;
+        height: 120px;
     }
     #tableadmin
     {

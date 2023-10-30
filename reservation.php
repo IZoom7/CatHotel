@@ -122,7 +122,7 @@ if (isset($_SESSION['username'])) {
         </div>
                        
         
-        <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
+        <a href="#" id="loginbtn" class="logout">ออกจากระบบ</a>
 
 
     </nav>
@@ -265,99 +265,6 @@ if (isset($_SESSION['username'])) {
 </div>
 
 
-
-
-   
-   <!----------------------------จอง-------------------------------->  
-    
-    
-    
-    
-    
-    <!--<div class="login-bar">
-        <h4>การจองห้องพัก</h4>
-        <br>
-        <img style="width: 280px; height: 130px; position: absolute; bottom: 55.4%; right: 35%;"
-            src="img/cat_peek02.png" alt="">
-        <form action="insert_pet_success.php" method="post" id="login-form">
-            <div class="d-flex flex-wrap align-items-start">
-                <div class="input-group mb-3" style="flex: 70;">
-                    <span class="input-group-text" id="basic-addon1">ID สัตว์เลี้ยง</span>
-                    <input style="width: 60%;" type="text" class="form-control" placeholder="ID"
-                        aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_name" required>
-                </div>
-            <div class="input-group mb-3">
-                <select class="form-select" aria-label="Choose Your headquarter " name="headquarter_id">
-                    <option selected>สาขา</option>
-                    <option value="ดอนเมือง">ดอนเมือง</option>
-                    <option value="สนามบินสุวรรณภูมิ">สนามบินสุวรรณภูมิ</option>
-                    <option value="หมอชิต">หมอชิต</option>
-                    <option value="โคกอีเลิ้งซิตี้">โคกอีเลิ้งซิตี้</option>
-                </select>
-            </div>
-            <br>
-            <div class="input-group mb-3" style="flex: 30;">
-                <div class="input-group mb-3" style="flex: 70;">
-                    <span class="input-group-text" id="basic-addon1">วันเข้าพัก</span>
-                    <input style="font-family: 'Kanit', sans-serif;" type="date" id="date" name="date">
-                </div>
-            </div>
-            <div class="input-group mb-3" style="flex: 30;">
-                <div class="input-group mb-3" style="flex: 70;">
-                    <span class="input-group-text" id="basic-addon1">วันออก</span>
-                    <input style="font-family: 'Kanit', sans-serif;" type="date" id="date" name="date">
-                </div>
-            </div>
-            <br>
-            <div class="d-flex" style="width: 100%;">
-                <div class="input-group mb-3">
-                    <select style="margin-right: 20px;" class="form-select" aria-label="Choose Your Best Price"
-                        name="room_price">
-                        <option selected>ระดับการบริการ</option>
-                        <option value="Kitty">Kitty</option>
-                        <option value="Adult">Adult</option>
-                        <option value="Exotic">Exotic</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3">
-                    <select class="form-select" aria-label="Choose Your Pet's room " name="room_size">
-                        <option selected>ขนาดห้อง</option>
-                        <option value="Kitty">Small</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Large">Large</option>
-                    </select>
-                </div>
-            </div>
-            <br>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">ส่งสลิปการจ่ายเงิน</span>
-                <input type="file" class="form-control" name="pet_image" accept="image/*" required>
-            </div>
-            <div class="input-group mb-3" ">
-                <input style="width: 60%;" type="hidden" class="form-control"                    
-                    value="<?php
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_assoc()) {
-                            echo $row['room_id'];
-                        }
-                    } else {
-                        echo "0 results";
-                    }
-                    $conn->close();
-                    ?>
-                    "
-                     aria-describedby="basic-addon1" name="owner_id">
-                    
-            </div>
-            <br><br>
-
-
-            <div style="font-family: 'Kanit', sans-serif;">
-                <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="เพิ่มสัตว์เลี้ยง">
-                <a style="margin-right: 150px;" class="btn btn-secondary" href="home_session.php">กลับไปยังหน้าหลัก</a>
-            </div>
-        </form>
-    </div> --->
 
 
 
