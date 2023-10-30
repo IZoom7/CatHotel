@@ -19,6 +19,9 @@ if (isset($_POST['owner_name']) && isset($_POST['owner_phone']) && isset($_POST[
                 title: "ชื่อผู้ใช้ซ้ำกัน",
                 text: "ชื่อผู้ใช้นี้ถูกใช้ไปแล้ว โปรดเลือกชื่อผู้ใช้อื่น",
             });
+            setTimeout(function() {
+                window.location.href = "https://petvilla.online/login.php";
+            }, 1000); // นำทางหน้า login.php หลังจาก 1 วินาที
         </script>';
     } else {
         // ถ้า owner_username ไม่ซ้ำกัน
@@ -54,6 +57,9 @@ if (isset($_POST['owner_name']) && isset($_POST['owner_phone']) && isset($_POST[
             title: "โปรดใส่ข้อมูลให้ครบ",
             text: "กรุณากรอกข้อมูลให้ครบทุกช่อง",
         });
+        setTimeout(function() {
+            window.location.href = "https://petvilla.online/login.php";
+        }, 1000); // นำทางหน้า login.php หลังจาก 1 วินาที
     </script>';
 }
 ?>
