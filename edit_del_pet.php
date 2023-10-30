@@ -95,24 +95,24 @@ if (isset($_SESSION['username'])) {
     <div class="login-bar">
 
     <form action="edit_pet_success.php" method="post" id="login-form"> 
-        <input type="hidden" name="pet_id" value="<?php echo $pet_id; ?>">
+        <input type="hidden" name="pet_id" value="<?=$row['pet_id'];?>">
         <label for="pet_name">ชื่อสัตว์เลี้ยง:</label>
-        <input type="text" name="pet_name" value="<?php echo $row['pet_name'];?>"><br>
+        <input type="text" name="pet_name" value="<?=$row['pet_name'];?>"><br>
 
         <label for="age">อายุ:</label>
-        <input type="text" name="age" value="<?php echo $row['age'];?>"><br>
+        <input type="text" name="age" value="<?=$row['age'];?>"><br>
 
         <label for="pet_type">ประเภทสัตว์เลี้ยง:</label>
-        <input type="text" name="pet_type" value="<?php echo $row['pet_type'];?>"><br>
+        <input type="text" name="pet_type" value="<?=$row['pet_type'];?>"><br>
 
         <label for="pet_breed">สายพันธุ์:</label>
-        <input type="text" name="pet_breed" value="<?php echo $row['pet_breed'];?>"><br>
+        <input type="text" name="pet_breed" value="<?=$row['pet_breed'];?>"><br>
 
         <label for="pet_detail">รายละเอียดเพิ่มเติม:</label>
-        <input type="text" name="pet_detail" value="<?php echo $row['pet_detail'];?>"><br>
+        <input type="text" name="pet_detail" value="<?=$row['pet_detail'];?>"><br>
 
         <label for="pet_image">รูปภาพ:</label>
-        <textarea id="uppic" name="pet_image" id="pet_image" cols="3" rows="1"><?php echo $row['pet_image'];?></textarea>
+        <textarea id="uppic" name="pet_image" id="pet_image" cols="3" rows="1"><?=$row['pet_image'];?></textarea>
 
         <br><br>
         <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="บันทึกข้อมูล">
