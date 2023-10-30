@@ -61,7 +61,7 @@ if (isset($_GET['pet_id'])) {
         data-sibling="#uppic" data-palette="blue"></script>
 
     <style>
-        #imgbar {
+        #imgbar img {
             width: 450px;
             height: 360px;
             margin-left: 30px;
