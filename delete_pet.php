@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['confirm_delete'])) {
     }).then(function(result) {
         if (result.isConfirmed) {
             // ถ้าผู้ใช้ยืนยันการลบ
-            document.location.href = "delete.php?pet_id=' . $pet_id . '&confirm_delete=1";
+            window.location.href = "delete_pet_success.php";
         } else {
             // ถ้าผู้ใช้ยกเลิกการลบ
             window.location.href = "https://petvilla.online/reservation.php";
