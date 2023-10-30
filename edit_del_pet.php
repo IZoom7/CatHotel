@@ -2,11 +2,12 @@
 require 'dbconn.php';
 if (!isset($_GET['pet_id'])) {
     header("refresh: 0; url=https://petvilla.online/reservation.php");
+}
 
-
+if (isset($_GET['pet_id'])) {
 $sql = "SELECT * FROM pets WHERE pet_id = '$_GET[pet_id]'";
 $result = $conn->query($sql);
-$row = mysqli_fetch_array($result);
+$rowz = mysqli_fetch_array($result);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc(); // ดึงข้อมูลและใส่ใน $row
@@ -33,8 +34,8 @@ if (isset($_SESSION['username'])) {
     }
 
 }
-
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -106,19 +107,19 @@ if (isset($_SESSION['username'])) {
         
         <div class="input-group mb-3" style="flex: 70;">
                     <span class="input-group-text" id="basic-addon1">ชื่อสัตว์เลี้ยง</span>
-                    <input style="width: 60%;" type="text" class="form-control" 
+                    <input value="<?=$rowz['pet_name'];?>" style="width: 60%;" type="text" class="form-control" 
                         aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_name" required>
         </div>
         
         <div class="input-group mb-3" style="flex: 70;">
                     <span class="input-group-text" id="basic-addon1">อายุ</span>
-                    <input style="width: 60%;" type="text" class="form-control" 
+                    <input value="<?=$rowz['age'];?>" style="width: 60%;" type="text" class="form-control" 
                         aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="age" required>
         </div>
 
         <div class="input-group mb-3" style="flex: 70;">
                     <span class="input-group-text" id="basic-addon1">ประเภทสัตว์เลี้ยง</span>
-                    <input style="width: 60%;" type="text" class="form-control" 
+                    <input value="<?=$rowz['pet_type'];?>" style="width: 60%;" type="text" class="form-control" 
                         aria-label="กรุณากรอกชื่อสัตว์เลี้ยง" aria-describedby="basic-addon1" name="pet_type" required>
         </div>
         
