@@ -36,7 +36,7 @@
         width: 200px;
         height: 120px;
     }
-    #tableadmin
+    #tableadmin thead tr th td
     {
         font-family: 'Kanit', sans-serif;
     }
