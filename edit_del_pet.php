@@ -1,6 +1,6 @@
 <?php
 require 'dbconn.php';
-if (!isset($_GET['pet_id'])) {
+if (!isset($_GET['pet_name'])) {
     header("refresh: 0; url=https://petvilla.online/reservation.php");
 }
 
@@ -9,7 +9,7 @@ session_start();
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
-    $sql = "SELECT * FROM pets WHERE pet_id = '$_GET[pet_id]'";
+    $sql = "SELECT * FROM pets WHERE pet_name = '$_GET[pet_name]'";
     $sql2 = "SELECT owner_name FROM owner WHERE owner_username = '$username'";
 
 
@@ -93,7 +93,7 @@ if (isset($_SESSION['username'])) {
 
     <div class="login-bar">
 
-    <form action="edit_pet_success.php" method="post"> 
+    <form action="edit_pet_success.php" method="post" id="login-form"> 
         <input type="hidden" name="pet_id" value="<?php echo $pet_id; ?>">
         <label for="pet_name">ชื่อสัตว์เลี้ยง:</label>
         <input type="text" name="pet_name" value="<?php echo $row['pet_name'];?>"><br>
@@ -110,8 +110,8 @@ if (isset($_SESSION['username'])) {
         <label for="pet_detail">รายละเอียดเพิ่มเติม:</label>
         <input type="text" name="pet_detail" value="<?php echo $row['pet_detail'];?>"><br>
 
-        <label for="pet_image">ชื่อสัตว์เลี้ยง:</label>
-        <input type="text" name="pet_image" value="<?php echo $row['pet_image'];?>"><br>
+        <label for="pet_image">รูปภาพ:</label>
+        <textarea name="pet_image" id="pet_image" cols="3" rows="1"><?php echo $row['pet_image'];?></textarea>
 
         <br><br>
         <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="บันทึกข้อมูล">
