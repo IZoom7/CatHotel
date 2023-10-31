@@ -291,3 +291,52 @@ nav a:hover::before {
 .signup-form {
     font-family: 'Kanit', sans-serif;
 }
+
+
+/*------------------------------Booking_form01.html------------------------------*/
+.pet-group
+        {
+            display: flex;
+            padding-top: 60px;
+        }
+        .pet-card
+        {
+            border: 1px grey solid;
+            border-radius: 10px;
+            margin-left: 30px;
+            padding: 10px;
+            background-color: #efefef;
+        }
+
+.pet-card h5
+        {
+            padding-top: 15px;
+            padding-left: 10px;
+        }
+        .pet-card p
+        {
+            padding-left: 10px;
+        }
+        
+        .pet-card img
+        {
+            width: 250px;
+            height: 130px;
+            border-radius: 5px;
+        }
+        .botton-grp
+        {
+            display: flex;
+            
+        }
+        #edit-pet
+        {
+            width: 70%;
+            
+        }
+        #del-pet
+        {
+            width: 30%;
+            margin-left: 10px;
+            
+        }
