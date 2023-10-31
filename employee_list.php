@@ -64,7 +64,7 @@
 <table style="font-family: 'Kanit', sans-serif;" id="tableadmin" class="table table-striped">
     <thead>
         <tr>
-            
+            <th scope="col">EMP-ID</th>
             <th scope="col">ชื่อพนักงาน</th>
             <th scope="col">นามสกุล</th>
             <th scope="col">อีเมล์</th>
