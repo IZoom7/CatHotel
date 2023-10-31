@@ -208,7 +208,7 @@ if (isset($_SESSION['username'])) {
                 <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="จองห้อง">
                 <a style="margin-right: 150px;" class="btn btn-secondary" href="home_session.php">กลับไปยังหน้าหลัก</a>
             </div>
-        </form>
+        
     </div>
 
     <div style="width: 750px;" class="login-bar">
@@ -230,6 +230,7 @@ if (isset($_SESSION['username'])) {
         }
         ?>
     </div>
+    </form>
 </div>
 
 
