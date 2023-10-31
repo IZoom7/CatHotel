@@ -57,7 +57,7 @@ if (isset($_SESSION['username'])) {
             border-radius: 15px;
             border: 0.1px solid black;
             background-color: #d7d7d7;
-            margin-top: 87px;
+            margin-top: 16px;
             margin-left: 27px;
             padding: 60px;
             width: 560px;
