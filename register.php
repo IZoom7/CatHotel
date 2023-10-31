@@ -60,7 +60,7 @@
 
             <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="สมัครสมาชิก">
             <a style="margin-right: 150px;" class="btn btn-secondary" href="login.php">กลับไปยังเข้าสู่ระบบ</a>
-
+            <a style="margin-right: 150px;" class="btn btn-secondary" href="emp_register.php">ลงทะเบียนพนักงาน</a>
         </form>
    </div>
 
