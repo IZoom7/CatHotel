@@ -1,12 +1,14 @@
 <?php
-require 'dbconn.php';
-
-$sql = "SELECT * FROM pets";
-$result = $conn->query($sql);
-
-if (!$result) {
-    die("Error : " . $conn->$conn_error);
-}
+    require 'dbconn.php';
+  
+    $sql = "SELECT employees.*, hotel.headquarter_address AS headquarter_address FROM hotel
+            LEFT JOIN owner ON employees.headquarter_id = hotel.headquarter_id ORDER BY headquarter_id ";
+    
+    $result = $conn->query($sql);
+    
+    if(!$result){
+        die("Error : ". $conn->$conn_error);
+    }
 
 ?>
 
@@ -24,6 +26,19 @@ if (!$result) {
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Kanit:wght@200&family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="icon" href="img/cat_icon01.png" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<style>
+    td img
+    {
+        width: 200px;
+        height: 120px;
+    }
+
+
+</style>
 
 </head>
 <body>
@@ -32,10 +47,9 @@ if (!$result) {
 
     <nav>
         <a id="MeowVilla" href="admin_dashboard.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
-        <a href="#">รายชื่อสัตว์เลี้ยง</a>
-        <a href="login.php">รายการห้องพัก</a>
-        <a href="login.php">กล้องวงจรปิด</a>
-        <a href="admin_dash02.php">DashBoard</a>
+        <a href="admin_dashboard">รายชื่อสัตว์เลี้ยง</a>
+        <a href="#">รายชื่อพนักงาน</a>
+        <a href="admin_dash02.php">รายการห้องพัก</a>
                          
         <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
 
@@ -45,6 +59,42 @@ if (!$result) {
     </div>
 <!---------------------------Main---------------------------------->
 
+<table style="font-family: 'Kanit', sans-serif;" id="tableadmin" class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">EMP-ID</th>
+                    <th scope="col-4">ชื่อพนักงาน</th>
+                    <th scope="col-4">นามสกุล</th>
+                    <th scope="col-4">อีเมล์</th>
+                    <th scope="col-4">เบอร์โทรศัพท์</th>
+                    <th scope="col-4">ที่อยู่</th>
+                    <th scope="col-4">สาขา</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                                <td>".$row["emp_id"]."</td>
+                                <td>".$row["emp_name"]."</td>
+                                <td>".$row["emp_lastname"]."</td>
+                                <td>".$row["emp_address"]."</td>
+                                <td>".$row["headquarter_address"]."</td>";
+                                echo "</tr>";
+                            }
+
+                }
+            else {
+                echo "0 results";
+            }
+
+            $conn->close();
+                    ?>
+    </tbody>
+</table>
 
 
 <!-------------------- Bottom(Footer) -------------------------->
