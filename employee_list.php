@@ -78,7 +78,7 @@
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>".$row["emp_id"]."</td>";
+            echo "<td>".$row["employee_id"]."</td>";
             echo "<td>".$row["emp_name"]."</td>";
             echo "<td>".$row["emp_lastname"]."</td>";
             echo "<td>".$row["emp_email"]."</td>";
