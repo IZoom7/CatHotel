@@ -58,7 +58,7 @@
     </div>
 <!---------------------------Main---------------------------------->
 <br><br>
-<h4 style="margin-left:60px">รายชื่อพี่เลี้ยง</h4><br><br>
+<h4 style="margin-left:60px">รายการชำระเงิน</h4><br><br>
 <table style="font-family: 'Kanit', sans-serif;" id="tableadmin" class="table table-striped">
     <thead>
         <tr>
