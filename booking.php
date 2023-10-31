@@ -70,9 +70,11 @@ if (isset($_SESSION['username'])) {
         .pet-card
         {
             margin-left: 6px;
-
+            border: 1px grey solid;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #efefef;
         }
-        
         .pet-card img {
             width: 135px;
             height: 85px;
