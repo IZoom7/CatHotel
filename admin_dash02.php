@@ -58,43 +58,42 @@
         <br>
     </div>
 <!---------------------------Main---------------------------------->
-
+<br><br>
+<h4>รายชื่อพี่เลี้ยง</h4>
 <table style="font-family: 'Kanit', sans-serif;" id="tableadmin" class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">EMP-ID</th>
-                    <th scope="col-4">ชื่อพนักงาน</th>
-                    <th scope="col-4">นามสกุล</th>
-                    <th scope="col-4">อีเมล์</th>
-                    <th scope="col-4">เบอร์โทรศัพท์</th>
-                    <th scope="col-4">ที่อยู่</th>
-                    <th scope="col-4">สาขา</th>
-
-                </tr>
-            </thead>
-            <tbody>
-
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>
-                                <td>".$row["emp_id"]."</td>
-                                <td>".$row["emp_name"]."</td>
-                                <td>".$row["emp_lastname"]."</td>
-                                <td>".$row["emp_address"]."</td>
-                                <td>".$row["headquarter_address"]."</td>";
-                                echo "</tr>";
-                            }
-
-                }
-            else {
-                echo "0 results";
-            }
-
-            $conn->close();
-                    ?>
+    <thead>
+        <tr>
+            <th scope="col">EMP-ID</th>
+            <th scope="col">ชื่อพนักงาน</th>
+            <th scope="col">นามสกุล</th>
+            <th scope="col">อีเมล์</th>
+            <th scope="col">เบอร์โทรศัพท์</th>
+            <th scope="col">ที่อยู่</th>
+            <th scope="col">สาขา</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>".$row["emp_id"]."</td>";
+            echo "<td>".$row["emp_name"]."</td>";
+            echo "<td>".$row["emp_lastname"]."</td>";
+            echo "<td>".$row["emp_email"]."</td>";
+            echo "<td>".$row["emp_phone"]."</td>";
+            echo "<td>".$row["emp_address"]."</td>";
+            echo "<td>".$row["headquarter_address"]."</td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='7'>ไม่มีข้อมูล</td></tr>";
+    }
+    $conn->close();
+    ?>
     </tbody>
 </table>
+
 
 
 <!-------------------- Bottom(Footer) -------------------------->
