@@ -38,7 +38,7 @@
         <br>
     </div>
     <div style="margin-bottom: 70px; margin-top: 130px;" class="login-bar">
-        <h4>สมัครสมาชิก</h4>
+        <h4>ลงทะเบียน (สำหรับพนักงาน)</h4>
         <br>
         <img style="width: 210px; height: 130px; position: absolute; bottom: 57.2%; right: 55%;"
             src="img/dog_peek02.png" alt="">
@@ -96,7 +96,7 @@
 
 
             <input style="margin-right: 15px;" class="btn btn-success" type="submit" value="สมัครพนักงาน">
-            <a style="margin-right: 150px;" class="btn btn-secondary" href="login.php">กลับไปยังเข้าสู่ระบบ</a>
+            <a style="margin-right: 150px;" class="btn btn-secondary" href="login.php">กลับไปยังเข้าสู่ระบบ</a><br><br>
             <a style="margin-right: 150px;" class="btn btn-secondary" href="register.php">ลงทะเบียนสำหรับลูกค้า</a>
         </form>
     </div>
