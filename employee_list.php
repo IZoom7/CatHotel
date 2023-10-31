@@ -50,7 +50,7 @@
         <a id="MeowVilla" href="admin_dashboard.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
         <a href="admin_dashboard.php">รายชื่อสัตว์เลี้ยง</a>
         <a href="#">รายชื่อพนักงาน</a>
-        <a href="#">รายการห้องพัก</a>
+        <a href="booking_list">รายการห้องพัก</a>
                          
         <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
 

@@ -1,8 +1,7 @@
 <?php
     require 'dbconn.php';
   
-    $sql = "SELECT pets.*, owner.owner_name AS owner_name FROM pets
-            LEFT JOIN owner ON pets.owner_id = owner.owner_id ORDER BY owner_name ";
+    $sql = "SELECT * FROM reservation.php";
     
     $result = $conn->query($sql);
     
@@ -47,9 +46,9 @@
 
     <nav>
         <a id="MeowVilla" href="admin_dashboard.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
-        <a href="#">รายชื่อสัตว์เลี้ยง</a>
-        <a href="employee_list.php">รายชื่อพนักงาน</a>
-        <a href="booking_list.php">รายการห้องพัก</a>
+        <a href="admin_dashboard.php">รายชื่อสัตว์เลี้ยง</a>
+        <a href="#">รายชื่อพนักงาน</a>
+        <a href="#">รายการห้องพัก</a>
                          
         <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
 
@@ -59,49 +58,39 @@
     </div>
 <!---------------------------Main---------------------------------->
 <br><br>
-<h4 style="margin-left:60px">รายชื่อสัตว์เลี้ยง</h4><br><br>
+<h4 style="margin-left:60px">รายชื่อพี่เลี้ยง</h4><br><br>
 <table style="font-family: 'Kanit', sans-serif;" id="tableadmin" class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">PET-ID</th>
-                    <th scope="col-4">ชื่อสัตว์เลี้ยง</th>
-                    <th scope="col-4">ประเภท</th>
-                    <th scope="col-4">สายพันธุ์</th>
-                    <th scope="col-4">อายุ</th>
-                    <th scope="col-4">รายละเอียด</th>
-                    <th scope="col-4">รูปภาพ</th>
-                    <th scope="col-4">ชื่อเจ้าของ</th>
-                    <th scope="col-4">แก้ไขข้อมูล</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>
-                                <td>".$row["pet_id"]."</td>
-                                <td>".$row["pet_name"]."</td>
-                                <td>".$row["pet_type"]."</td>
-                                <td>".$row["pet_breed"]."</td>
-                                <td>".$row["age"]."</td>
-                                <td>".$row["pet_detail"]."</td>";
-                                echo "<td>".$row["pet_image"]."</td>";
-                                echo "<td>".$row["owner_name"]."</td>";
-                                echo "<td>".'<a id="edit-pet" class="btn btn-warning" href="edit_del_pet.php?pet_id='.$row['pet_id'].'">แก้ไข</a>'."</td>";
-                                echo "<td>".'<a id="del-pet" class="btn btn-danger" href="delete_pet.php?pet_id='.$row['pet_id'].'">ลบ</a>'."</td>";
-                                echo "</tr>";
-                            }
-
-                }
-            else {
-                echo "0 results";
-            }
-
-            $conn->close();
-                    ?>
+    <thead>
+        <tr>
+            <th scope="col">REV-ID</th>
+            <th scope="col">H-ID</th>
+            <th scope="col">วันที่เข้าพัก</th>
+            <th scope="col">วันที่ออก</th>
+            <th scope="col">ชำระเงิน</th>
+            <th scope="col">จำนวนสัตว์เลี้ยง</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>".$row["reservation_id"]."</td>";
+            echo "<td>".$row["headquarter_id"]."</td>";
+            echo "<td>".$row["checkin_date"]."</td>";
+            echo "<td>".$row["checkout_date"]."</td>";
+            echo "<td>".$row["payment_amount"]."</td>";
+            echo "<td>".$row["pet_number"]."</td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='7'>ไม่มีข้อมูล</td></tr>";
+    }
+    $conn->close();
+    ?>
     </tbody>
 </table>
+
 
 
 <!-------------------- Bottom(Footer) -------------------------->
