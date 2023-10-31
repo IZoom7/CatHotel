@@ -218,7 +218,7 @@ if (isset($_SESSION['username'])) {
             while ($row = $result->fetch_assoc()) {
                 echo '<div class="pet-group">';
                 echo '<div class="pet-card">';
-                echo '<img src="' . $row['pet_image'] . '" alt="">';
+                echo $row['pet_image'];
                 echo '<h5>' . $row['pet_name'] . '</h5>';
                 echo '<div class="botton-grp">';
                 echo '<input type="checkbox" class="btn-check" id="' . $row['pet_id'] . '" name="pet_selection[]">';
