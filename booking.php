@@ -144,23 +144,23 @@ if (isset($_SESSION['username'])) {
             <div class="input-group mb-3">
                 <select class="form-select" aria-label="Choose Your headquarter " name="headquarter_id">
                     <option selected>สาขา</option>
-                    <option value="ดอนเมือง">ดอนเมือง</option>
-                    <option value="สนามบินสุวรรณภูมิ">สนามบินสุวรรณภูมิ</option>
-                    <option value="หมอชิต">หมอชิต</option>
-                    <option value="โคกอีเลิ้งซิตี้">โคกอีเลิ้งซิตี้</option>
+                    <option value="901">ดอนเมือง</option>
+                    <option value="902">สนามบินสุวรรณภูมิ</option>
+                    <option value="903">หมอชิต</option>
+                    <option value="904">โคกอีเลิ้งซิตี้</option>
                 </select>
             </div><br>
 
             <div class="input-group mb-3" style="flex: 30;">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">Check-In Date:</span>
-                    <input style="font-family: 'Kanit', sans-serif;" type="date" id="checkin">
+                    <input name="checkin_date" style="font-family: 'Kanit', sans-serif;" type="date" id="checkin">
                 </div>
             </div>
             <div class="input-group mb-3" style="flex: 30;">
                 <div class="input-group mb-3" style="flex: 70;">
                     <span class="input-group-text" id="basic-addon1">Check-Out:</span>
-                    <input style="font-family: 'Kanit', sans-serif;" type="date" id="checkout">
+                    <input name="checkout_date" style="font-family: 'Kanit', sans-serif;" type="date" id="checkout">
                 </div>
             </div>
 
@@ -199,11 +199,34 @@ if (isset($_SESSION['username'])) {
 
                 // เรียกใช้ฟังก์ชันครั้งแรกเมื่อหน้าเว็บโหลด
                 calculateTotal();
+
+
+                            // สร้างฟังก์ชันเพื่อส่งค่า totalAmount ไปยัง PHP
+            function sendTotalAmountToPHP() {
+                var totalAmount = parseFloat(document.getElementById("totalAmount").textContent);
+
+                // ใช้ XMLHttpRequest หรือ Fetch API เพื่อส่งค่าไปยัง PHP script
+                var xhr = new XMLHttpRequest();
+                var url = "booking_success.php";
+                var params = "totalAmount=" + totalAmount;
+                xhr.open("POST", url, true);
+
+                // เซ็ต header และส่งคำขอ
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        // ทำอะไรสักอย่างเมื่อคำขอสำเร็จ
+                        console.log(xhr.responseText);
+                    }
+                }
+                xhr.send(params);
+            }
+
             </script>
 
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">ส่งสลิปการจ่ายเงิน</span>
-                <input type="file" class="form-control" name="pet_image" accept="image/*" required>
+                <input type="file" class="form-control" name="payment_proof" accept="image/*" required>
             </div>
             <br><br>
 
