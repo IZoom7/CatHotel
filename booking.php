@@ -225,29 +225,15 @@ if (isset($_SESSION['username'])) {
             echo $row['pet_image'];
             echo '<h5>' . $row['pet_name'] . '</h5>';
             echo '<div class="botton-grp">';
-            echo '<a id="edit-pet" class="btn btn-warning" href="edit_del_pet.php?pet_id='.$row['pet_id'].'">แก้ไข</a>';
-            echo '<a id="del-pet" class="btn btn-danger" href="delete_pet.php?pet_id='.$row['pet_id'].'">ลบ</a>';
-
+            echo '<input type="checkbox" class="btn-check" id="' . $row['pet_id'] . '" name="pet_selection">';
+            echo '<label class="btn btn-outline-dark" for="' . $row['pet_id'] . '">เลือก</label><br>';
             echo '</div>';
             echo '</div>';
         }
     }
-    // เพิ่ม "เพิ่มรายชื่อสัตว์เลี้ยง" นอกจากลูป
+
     ?>
             
-                    
-            
-            
-            
-            
-            <img src="/img/husky01.jpg" alt="">
-                        <h5>ไอ้เหี้ยโบ้</h5>
-                        
-                        <div class="botton-grp">
-                            <input type="checkbox" class="btn-check" id="pet_id-1" name>
-                            <label class="btn btn-outline-dark" for="pet_id-1">เลือก</label><br>
-                        </div>
-            </div>
             
         </form>
     </div>

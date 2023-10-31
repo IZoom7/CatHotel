@@ -195,7 +195,7 @@ if (isset($_SESSION['username'])) {
                         </ul>
                     </div>
                     <div class="card-footer border-0 p-0">
-                        <a href="booking.php" class="btn btn-primary btn-block p-3" style="background-color: #219C90; border-radius: 10px; width: 100%; margin-top: 46px; font-size: 24px;">จองห้องเลย!</a>
+                        <a href="reservation.php" class="btn btn-primary btn-block p-3" style="background-color: #219C90; border-radius: 10px; width: 100%; margin-top: 46px; font-size: 24px;">จองห้องเลย!</a>
                     </div>
                 </div>
             </div>
@@ -222,7 +222,7 @@ if (isset($_SESSION['username'])) {
                         </ul>
                     </div>
                     <div class="card-footer border-0 p-0">
-                        <a href="booking.php" class="btn btn-secondary btn-block p-3" style="background-color: #EE9322; border-radius: 10px; width: 100%; margin-top: 46px; font-size: 24px;">จองห้องเลย!</a>
+                        <a href="reservation.php" class="btn btn-secondary btn-block p-3" style="background-color: #EE9322; border-radius: 10px; width: 100%; margin-top: 46px; font-size: 24px;">จองห้องเลย!</a>
                     </div>
                 </div>
             </div>
@@ -250,7 +250,7 @@ if (isset($_SESSION['username'])) {
                         </ul>
                     </div>
                     <div class="card-footer border-0 p-0">
-                        <a href="booking.php" class="btn btn-primary btn-block p-3" style="background-color: #D83F31; border-radius: 10px; width: 100%; font-size: 24px;">จองห้องเลย!</a>
+                        <a href="reservation.php" class="btn btn-primary btn-block p-3" style="background-color: #D83F31; border-radius: 10px; width: 100%; font-size: 24px;">จองห้องเลย!</a>
                     </div>
                 </div>
             </div>
