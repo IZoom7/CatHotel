@@ -3,7 +3,7 @@
   
     $sql = "SELECT employees.*, hotel.headquarter_address
     FROM employees
-    LEFT JOIN hotel ON employees.headquarter_id = hotel.headquarter_idid;";
+    LEFT JOIN hotel ON employees.headquarter_id = hotel.headquarter_id;";
     
     $result = $conn->query($sql);
     
