@@ -64,6 +64,7 @@ if (isset($_SESSION['username'])) {
         }
         .pet-group
         {
+            display: flex;
             flex-wrap: wrap;
             padding-top: 10px;
         }
@@ -223,10 +224,10 @@ if (isset($_SESSION['username'])) {
                         echo '<div class="pet-card">';
                         echo $row['pet_image'];
                         echo '<h5>' . $row['pet_name'] . '</h5>';
-                        
+                        echo '<div class="botton-grp">';
                         echo '<input type="checkbox" class="btn-check" id="' . $row['pet_id'] . '" name="pet_selection[]">';
                         echo '<label class="btn btn-outline-dark" for="' . $row['pet_id'] . '">เลือก</label><br>';
-                        
+                        echo '</div>';
                         echo '</div>';
                         
                     }
