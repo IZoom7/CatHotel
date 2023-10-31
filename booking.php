@@ -200,28 +200,6 @@ if (isset($_SESSION['username'])) {
                 // เรียกใช้ฟังก์ชันครั้งแรกเมื่อหน้าเว็บโหลด
                 calculateTotal();
 
-
-                            // สร้างฟังก์ชันเพื่อส่งค่า totalAmount ไปยัง PHP
-            function sendTotalAmountToPHP() {
-                var totalAmount = parseFloat(document.getElementById("totalAmount").textContent);
-
-                // ใช้ XMLHttpRequest หรือ Fetch API เพื่อส่งค่าไปยัง PHP script
-                var xhr = new XMLHttpRequest();
-                var url = "booking_success.php";
-                var params = "totalAmount=" + totalAmount;
-                xhr.open("POST", url, true);
-
-                // เซ็ต header และส่งคำขอ
-                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        // ทำอะไรสักอย่างเมื่อคำขอสำเร็จ
-                        console.log(xhr.responseText);
-                    }
-                }
-                xhr.send(params);
-            }
-
             </script>
 
             <div class="input-group mb-3">
