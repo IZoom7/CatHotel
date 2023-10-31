@@ -1,7 +1,7 @@
 <?php
     require 'dbconn.php';
   
-    $sql = "SELECT * FROM reservation.php";
+    $sql = "SELECT * FROM reservation";
     
     $result = $conn->query($sql);
     
