@@ -166,7 +166,7 @@ if (isset($_SESSION['username'])) {
             <input value="129" type="radio" class="btn-check" name="amount" id="kitty">
             <label class="btn btn-outline-success" for="kitty">Kitty</label>
 
-            <input value="249" type "radio" class="btn-check" name="amount" id="adult">
+            <input value="249" type="radio" class="btn-check" name="amount" id="adult">
             <label class="btn btn-outline-primary" for="adult">Adult</label>
 
             <input value="669" type="radio" class="btn-check" name="amount" id="exotic">
@@ -221,10 +221,10 @@ if (isset($_SESSION['username'])) {
                         echo '<div class="pet-card">';
                         echo $row['pet_image'];
                         echo '<h5>' . $row['pet_name'] . '</h5>';
-                        echo '<div class="botton-grp">';
+                        
                         echo '<input type="checkbox" class="btn-check" id="' . $row['pet_id'] . '" name="pet_selection[]">';
                         echo '<label class="btn btn-outline-dark" for="' . $row['pet_id'] . '">เลือก</label><br>';
-                        echo '</div>';
+                        
                         echo '</div>';
                         
                     }
