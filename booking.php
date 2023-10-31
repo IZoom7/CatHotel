@@ -215,18 +215,19 @@ if (isset($_SESSION['username'])) {
     </div>
 
     <div style="width: 750px;" class="login-bar">
-        <h4>เลือกสัตว์เลี้ยงที่จะเข้าพัก</h4>
-        <div class="pet-group">            
+        <h4>เลือกสัตว์เลี้ยงที่จะเข้าพัก</h4>         
                 
             <?php
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) { 
+            echo '<div class="pet-group">';
             echo '<div class="pet-card">';
             echo $row['pet_image'];
             echo '<h5>' . $row['pet_name'] . '</h5>';
             echo '<div class="botton-grp">';
             echo '<input type="checkbox" class="btn-check" id="' . $row['pet_id'] . '" name="pet_selection">';
             echo '<label class="btn btn-outline-dark" for="' . $row['pet_id'] . '">เลือก</label><br>';
+            echo '</div>';
             echo '</div>';
             echo '</div>';
         }
