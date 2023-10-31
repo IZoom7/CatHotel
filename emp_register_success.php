@@ -16,7 +16,7 @@ if (isset($_POST['emp_name']) && isset($_POST['emp_lastname']) && isset($_POST['
     $emp_doc = $_POST['emp_doc'];
 
     // ดำเนินการ INSERT ข้อมูลลงในฐานข้อมูล
-    $sql = "INSERT INTO employees (emp_name, emp_lastname, emp_email, emp_phone, emp_address, headquarter_id) VALUES ('$emp_name', '$emp_lastname', '$emp_email', '$emp_phone', '$emp_address', '$headquarter_id')";
+    $sql = "INSERT INTO employees (emp_name, emp_lastname, emp_email, emp_phone, emp_address, headquarter_id,emp_doc) VALUES ('$emp_name', '$emp_lastname', '$emp_email', '$emp_phone', '$emp_address', '$headquarter_id',$emp_doc)";
 
     if (mysqli_query($conn, $sql)) {
         echo '<script>
