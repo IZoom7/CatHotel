@@ -48,7 +48,7 @@
 
     <nav>
         <a id="MeowVilla" href="admin_dashboard.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
-        <a href="admin_dashboard">รายชื่อสัตว์เลี้ยง</a>
+        <a href="admin_dashboard.php">รายชื่อสัตว์เลี้ยง</a>
         <a href="#">รายชื่อพนักงาน</a>
         <a href="#">รายการห้องพัก</a>
                          
@@ -60,11 +60,11 @@
     </div>
 <!---------------------------Main---------------------------------->
 <br><br>
-<h4>รายชื่อพี่เลี้ยง</h4><br><br>
+<h4 style="margin-left:60px">รายชื่อพี่เลี้ยง</h4><br><br>
 <table style="font-family: 'Kanit', sans-serif;" id="tableadmin" class="table table-striped">
     <thead>
         <tr>
-            <th scope="col">EMP-ID</th>
+            
             <th scope="col">ชื่อพนักงาน</th>
             <th scope="col">นามสกุล</th>
             <th scope="col">อีเมล์</th>
