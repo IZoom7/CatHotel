@@ -139,7 +139,7 @@ if (isset($_SESSION['username'])) {
         <img style="width: 280px; height: 130px; position: absolute; bottom: 60.5%; right: 70%;"
             src="img/cat_peek02.png" alt="">
 
-        <form action="booking_form_success.php" method="post" id="login-form">
+        <form action="booking_success.php" method="post" id="login-form">
 
             <div class="input-group mb-3">
                 <select class="form-select" aria-label="Choose Your headquarter " name="headquarter_id">
