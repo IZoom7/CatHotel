@@ -5,8 +5,6 @@
 require 'dbconn.php';
 
 
-if (isset($_POST['emp_name']) && isset($_POST['emp_lastname']) && isset($_POST['emp_email']) && isset($_POST['emp_phone']) && isset($_POST['emp_address']) && isset($_POST['headquarter_id'])) {
-
     $emp_name = $_POST['emp_name'];
     $emp_lastname = $_POST['emp_lastname'];
     $emp_email = $_POST['emp_email'];
@@ -32,21 +30,7 @@ if (isset($_POST['emp_name']) && isset($_POST['emp_lastname']) && isset($_POST['
     } else {
         echo "เกิดข้อผิดพลาดในการบันทึกข้อมูล: " . mysqli_error($conn);
     }
-} else {
-    echo '<script>
-        Swal.fire({
-            icon: "error",
-            title: "โปรดใส่ข้อมูลให้ครบ",
-            text: "กรุณากรอกข้อมูลให้ครบทุกช่อง",
-        });
-        setTimeout(function() {
-            window.location.href = "https://petvilla.online/login.php";
-        }, 1000); // นำทางหน้า login.php หลังจาก 1 วินาที
-    </script>';
-}
-
-
-mysqli_close($conn);
+ 
 ?>
 
 
