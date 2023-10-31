@@ -1,8 +1,12 @@
 <?php
     require 'dbconn.php';
   
-    $sql = "SELECT employees.*, hotel.headquarter_address AS headquarter_address FROM hotel
-            LEFT JOIN owner ON employees.headquarter_id = hotel.headquarter_id ORDER BY headquarter_id ";
+    $sql = "SELECT employees.*, hotel.headquarter_address AS headquarter_address 
+    FROM employees
+    LEFT JOIN owner ON employees.headquarter_id = owner.headquarter_id
+    LEFT JOIN hotel ON employees.headquarter_id = hotel.headquarter_id
+    ORDER BY employees.headquarter_id;
+     ";
     
     $result = $conn->query($sql);
     
