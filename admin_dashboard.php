@@ -48,7 +48,7 @@
     <nav>
         <a id="MeowVilla" href="admin_dashboard.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
         <a href="#">รายชื่อสัตว์เลี้ยง</a>
-        <a href="admin_dash02.php">รายชื่อพนักงาน</a>
+        <a href="employee_list.php">รายชื่อพนักงาน</a>
         <a href="#">รายการห้องพัก</a>
                          
         <a href="index.php" id="loginbtn" class="logout">ออกจากระบบ</a>
