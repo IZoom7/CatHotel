@@ -5,7 +5,7 @@
     require 'dbconn.php';
     
     $selectedCount = count($_POST['pet_selection']);
-    $sql_update = "INSERT INTO reservation (headquarter_id,checkin_date,checkout_date,payment_amount,pet_number,payment_proof) VALUES ('$_POST[headquarter_id]', '$_POST[checkin_date]', '$_POST[checkout_date]', '$_POST[totalAmount]','$selectedCount','$_POST[payment_proof]')";
+    $sql_update = "INSERT INTO reservation (headquarter_id,checkin_date,checkout_date,payment_amount,pet_number,payment_proof) VALUES ('$_POST[headquarter_id]', '$_POST[checkin_date]', '$_POST[checkout_date]', '$_POST[totalAmount]','500','$_POST[payment_proof]')";
     $result = $conn->query($sql_update);
     
     
