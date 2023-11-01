@@ -184,8 +184,8 @@ if (isset($_SESSION['username'])) {
 
                 <!-- <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">ส่งสลิปการจ่ายเงิน</span>
-                    <input type="file" class="form-control" name="payment_proof" accept="image/*" required> -->
-                </div>
+                    <input type="file" class="form-control" name="payment_proof" accept="image/*" required> 
+                </div> -->
                 <br><br>
 
                 <div style="font-family: 'Kanit', sans-serif;">
