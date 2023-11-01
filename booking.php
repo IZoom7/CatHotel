@@ -182,9 +182,9 @@ if (isset($_SESSION['username'])) {
                 
                 <input type="hidden" value="totalAmount" name="totalAmount">
 
-                <div class="input-group mb-3">
+                <!-- <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">ส่งสลิปการจ่ายเงิน</span>
-                    <input type="file" class="form-control" name="payment_proof" accept="image/*" required>
+                    <input type="file" class="form-control" name="payment_proof" accept="image/*" required> -->
                 </div>
                 <br><br>
 

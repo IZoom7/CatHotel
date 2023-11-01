@@ -13,7 +13,7 @@
     $payment_proof = $_POST['payment_proof'];
 
     $sql_update = "INSERT INTO reservation (headquarter_id, checkin_date, checkout_date, payment_amount, pet_number, payment_proof) 
-               VALUES ('$headquarter_id', '$checkin_date', '$checkout_date', '$totalAmount', '$selectedCount', '$payment_proof')";
+               VALUES ('$headquarter_id', '$checkin_date', '$checkout_date', '$totalAmount', '$selectedCount', '0')";
 
     $result = $conn->query($sql_update);
 
