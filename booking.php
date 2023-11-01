@@ -246,6 +246,35 @@ if (isset($_SESSION['username'])) {
                     // เรียกใช้ฟังก์ชันครั้งแรกเมื่อหน้าเว็บโหลด
                     calculateTotal();
 
+                    
+                // รับค่าจากฟอร์มและคำนวณค่าที่ต้องจ่าย
+                document.getElementById('login-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // คำนวณค่าที่ต้องจ่าย
+                    var totalAmount = calculateTotalAmount();
+                    // ตรวจสอบว่า totalAmount ถูกต้องและไม่ใช่ NaN
+                    if (!isNaN(totalAmount)) {
+                        document.getElementById('totalAmount').textContent = totalAmount;
+                    } else {
+                        // คำนวณผิดพลาด
+                        alert('เกิดข้อผิดพลาดในการคำนวณค่าที่ต้องจ่าย');
+                    }
+                    // ส่งแบบฟอร์ม
+                    this.submit();
+                });
+
+                // คำนวณค่าที่ต้องจ่าย
+                function calculateTotalAmount() {
+                    var selectedPackage = document.querySelector('input[name="amount"]:checked');
+                    if (selectedPackage) {
+                        return selectedPackage.value;
+                    } else {
+                        return NaN; // หากไม่มีแพ็กเกจที่เลือก
+                    }
+                }
+
+
+
                 </script>
 </body>
 
