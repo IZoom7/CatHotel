@@ -102,7 +102,7 @@ if (isset($_SESSION['username'])) {
         <a id="MeowVilla" href="home_session.php"><img src="img/PetVilla_Logo.png" alt=""></a>
         <a href="reservation.php">จองห้องพักสัตว์เลี้ยง</a>
         <a href="#">แอบส่องน้องๆ</a>
-        <a href="employee_chat.php">ติดต่อพี่เลี้ยง</a>
+        <a href="#">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
 
         <div
@@ -141,7 +141,7 @@ if (isset($_SESSION['username'])) {
             <img style="width: 280px; height: 130px; position: absolute; bottom: 60.5%; right: 70%;"
                 src="img/cat_peek02.png" alt="">
 
-            <form action="booking_success.php" method="post" id="login-form">
+            <form action="bookinght_success.php" method="post" id="login-form">
 
                 <div class="input-group mb-3">
                     <select class="form-select" aria-label="Choose Your headquarter " name="headquarter_id">
@@ -179,6 +179,7 @@ if (isset($_SESSION['username'])) {
 
                 <h5> จำนวนเงินที่ต้องจ่าย: <span id="totalAmount"></span> บาท</h5><br>
                 
+                <input type="hidden" value="totalAmount">
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">ส่งสลิปการจ่ายเงิน</span>
@@ -193,29 +194,29 @@ if (isset($_SESSION['username'])) {
                         href="home_session.php">กลับไปยังหน้าหลัก</a>
                 </div>
 
-        </div>
+                    </div>
 
-        <div style="width: 750px;" class="login-bar">
-            <h4>เลือกสัตว์เลี้ยงที่จะเข้าพัก</h4>
-            <div class="pet-group">
-                <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
+                    <div style="width: 750px;" class="login-bar">
+                        <h4>เลือกสัตว์เลี้ยงที่จะเข้าพัก</h4>
+                        <div class="pet-group">
+                            <?php
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
 
-                        echo '<div class="pet-card">';
-                        echo $row['pet_image'];
-                        echo '<h5>' . $row['pet_name'] . '</h5>';
-                        echo '<div class="botton-grp">';
-                        echo '<input type="checkbox" class="btn-check" id="' . $row['pet_id'] . '" name="pet_selection[]">';
-                        echo '<label class="btn btn-outline-dark" for="' . $row['pet_id'] . '">เลือก</label><br>';
-                        echo '</div>';
-                        echo '</div>';
+                                    echo '<div class="pet-card">';
+                                    echo $row['pet_image'];
+                                    echo '<h5>' . $row['pet_name'] . '</h5>';
+                                    echo '<div class="botton-grp">';
+                                    echo '<input type="checkbox" class="btn-check" id="' . $row['pet_id'] . '" name="pet_selection[]">';
+                                    echo '<label class="btn btn-outline-dark" for="' . $row['pet_id'] . '">เลือก</label><br>';
+                                    echo '</div>';
+                                    echo '</div>';
 
-                    }
-                }
-                ?>
-            </div>
-        </div>
+                                }
+                            }
+                            ?>
+                        </div>
+                    </div>
         </form>
     </div>
 
