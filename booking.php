@@ -134,6 +134,7 @@ if (isset($_SESSION['username'])) {
 
     <!----------------------------จอง-------------------------------->
 
+    <form action="bookinght_success.php" method="post" id="login-form">
     <div class="bookandpic">
         <div style="margin-left: 95px; ;" class="login-bar">
             <h4>การจองห้องพัก</h4>
@@ -141,7 +142,7 @@ if (isset($_SESSION['username'])) {
             <img style="width: 280px; height: 130px; position: absolute; bottom: 60.5%; right: 70%;"
                 src="img/cat_peek02.png" alt="">
 
-            <form action="bookinght_success.php" method="post" id="login-form">
+            
 
                 <div class="input-group mb-3">
                     <select class="form-select" aria-label="Choose Your headquarter " name="headquarter_id">
@@ -194,7 +195,7 @@ if (isset($_SESSION['username'])) {
                         href="home_session.php">กลับไปยังหน้าหลัก</a>
                 </div>
 
-                    </div>
+        </div>
 
                     <div style="width: 750px;" class="login-bar">
                         <h4>เลือกสัตว์เลี้ยงที่จะเข้าพัก</h4>
@@ -217,9 +218,9 @@ if (isset($_SESSION['username'])) {
                             ?>
                         </div>
                     </div>
-        </form>
+        
     </div>
-
+    </form>
 
     <script>
                     function calculateTotal() {
