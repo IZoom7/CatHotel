@@ -71,6 +71,7 @@
             <th scope="col">เบอร์โทรศัพท์</th>
             <th scope="col">ที่อยู่</th>
             <th scope="col">สาขา</th>
+            <th scope="col">แก</th>
         </tr>
     </thead>
     <tbody>
@@ -85,6 +86,8 @@
             echo "<td>".$row["emp_phone"]."</td>";
             echo "<td>".$row["emp_address"]."</td>";
             echo "<td>".$row["headquarter_address"]."</td>";
+            echo "<td>".'<a id="edit-pet" class="btn btn-warning" href="admin_emp_edit.php?employee_id='.$row['employee_id'].'">แก้ไข</a>'."</td>";
+            echo "<td>".'<a id="del-pet" class="btn btn-danger" href="admin_emp_del.php?employee_id='.$row['employee_id'].'">ลบ</a>'."</td>";
             echo "</tr>";
         }
     } else {
