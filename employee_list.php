@@ -71,7 +71,7 @@
             <th scope="col">เบอร์โทรศัพท์</th>
             <th scope="col">ที่อยู่</th>
             <th scope="col">สาขา</th>
-            <th scope="col">แก</th>
+            <th scope="col">แก้ไข</th>
         </tr>
     </thead>
     <tbody>

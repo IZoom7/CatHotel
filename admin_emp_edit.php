@@ -63,7 +63,7 @@ if (isset($_GET['employee_id'])) {
         <br>
     </div>
 <!---------------------------Main---------------------------------->
-<br><br>
+
 <div style="margin-bottom: 70px; margin-top: 130px;" class="login-bar">
         <h4>แก้ไขข้อมูลพนักงาน</h4>
         <br>
