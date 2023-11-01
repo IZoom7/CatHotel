@@ -3,12 +3,20 @@
 
     <?php
     require 'dbconn.php';
-    
+
+    $headquarter_id = $_POST['headquarter_id'];
+    $checkin_date = $_POST['checkin_date'];
+    $checkout_date = $_POST['checkout_date'];
+    $totalAmount = $_POST['totalAmount'];
     $selectedCount = count($_POST['pet_selection']);
-    $sql_update = "INSERT INTO reservation (headquarter_id,checkin_date,checkout_date,payment_amount,pet_number,payment_proof) VALUES ('$_POST[headquarter_id]', '$_POST[checkin_date]', '$_POST[checkout_date]', '$_POST[totalAmount]','$selectedCount','$_POST[payment_proof]')";
+    $payment_proof = $_POST['payment_proof'];
+
+    $sql_update = "INSERT INTO reservation (headquarter_id, checkin_date, checkout_date, payment_amount, pet_number, payment_proof) 
+               VALUES ('$headquarter_id', '$checkin_date', '$checkout_date', '$totalAmount', '$selectedCount', '$payment_proof')";
+
     $result = $conn->query($sql_update);
-    
-    
+
+
     if (!$result) {
         die("Error God Damn it : " . $conn->error);
     } else {

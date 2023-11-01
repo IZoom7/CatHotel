@@ -179,7 +179,7 @@ if (isset($_SESSION['username'])) {
 
                 <h5> จำนวนเงินที่ต้องจ่าย: <span id="totalAmount"></span> บาท</h5><br>
                 
-                <input type="hidden" value="totalAmount">
+                <input type="hidden" value="totalAmount" name="totalAmount">
 
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">ส่งสลิปการจ่ายเงิน</span>
