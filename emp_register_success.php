@@ -45,8 +45,6 @@ if (isset($_POST['emp_name']) && isset($_POST['emp_lastname']) && isset($_POST['
     </script>';
 }
 
-// ปิดการเชื่อมต่อกับฐานข้อมูล
-mysqli_close($conn);
 ?>
 
 
