@@ -7,7 +7,7 @@ if(isset($_GET['employee_id'])){
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
     echo '<script>';
     echo 'Swal.fire({';
-    echo '  title: "คุณต้องการลบข้อมูลพนักกงานท่านนี้หรือไม่?",';
+    echo '  title: "คุณต้องการลบข้อมูลพนักงานท่านนี้หรือไม่?",';
     echo '  icon: "warning",';
     echo '  showCancelButton: true,';
     echo '  confirmButtonText: "ใช่, ลบ",';

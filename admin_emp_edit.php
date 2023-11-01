@@ -7,13 +7,8 @@ if (!isset($_GET['employee_id'])) {
 if (isset($_GET['employee_id'])) {
     $sql = "SELECT * FROM employees WHERE employee_id = '$_GET[employee_id]'";
     $result = $conn->query($sql);
-    $rowz = mysqli_fetch_array($result);
+    $row = mysqli_fetch_array($result);
 
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc(); // ดึงข้อมูลและใส่ใน $row
-    } else {
-        echo "ไม่พบข้อมูลสัตว์เลี้ยง"; // ในกรณีที่ไม่พบข้อมูล
-    }
 
 }
 ?>
