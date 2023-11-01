@@ -40,7 +40,7 @@ if (isset($_SESSION['username'])) {
         <a id="MeowVilla" href="home_session.php"><img src="img/PetVilla_Logo.png" alt=""></a>       
         <a href="reservation.php">จองห้องพักสัตว์เลี้ยง</a>
         <a href="#">แอบส่องน้องๆ</a>
-        <a href="employee_chat.php">ติดต่อพี่เลี้ยง</a>
+        <a href="#">ติดต่อพี่เลี้ยง</a>
         <a href="#">เกี่ยวกับเรา</a>
 
         <div style="position: absolute; font-size: 18px; right: 20%; bottom: 86%; background-color:#0f645b; color: white; border-radius: 5px; padding-top: 27px; padding-left: 15px; padding-right: 0px; text-align: center;">

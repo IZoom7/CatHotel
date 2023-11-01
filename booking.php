@@ -134,7 +134,8 @@ if (isset($_SESSION['username'])) {
 
     <!----------------------------จอง-------------------------------->
 
-    <form action="bookinght_success.php" method="post" id="login-form">
+    <form action="bookinght_success.php" method="post" id="login-form" enctype="multipart/form-data">
+
     <div class="bookandpic">
         <div style="margin-left: 95px; ;" class="login-bar">
             <h4>การจองห้องพัก</h4>
